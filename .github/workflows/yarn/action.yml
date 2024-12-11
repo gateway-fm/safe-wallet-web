@@ -7,6 +7,7 @@ runs:
   steps:
     # We require yarn v4 and installing through corepack is the easiest way to get it
     - name: Enable Corepack
+      shell: bash
       run: corepack enable
     - name: Yarn cache
       uses: actions/cache@v3
