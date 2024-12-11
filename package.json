@@ -35,12 +35,6 @@
   "engines": {
     "node": ">=18"
   },
-  "resolutions": {
-    "@safe-global/safe-core-sdk-types/**/ethers": "^6.11.1",
-    "@safe-global/protocol-kit/**/ethers": "^6.11.1",
-    "@safe-global/api-kit/**/ethers": "^6.11.1",
-    "@gnosis.pm/zodiac/**/ethers": "^6.11.1"
-  },
   "dependencies": {
     "@cowprotocol/widget-react": "^0.10.0",
     "@ducanh2912/next-pwa": "^9.7.1",
@@ -168,5 +162,6 @@
     "budgetPercentIncreaseRed": 20,
     "minimumChangeThreshold": 0,
     "showDetails": true
-  }
+  },
+  "packageManager": "yarn@4.5.3"
 }
