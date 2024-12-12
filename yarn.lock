@@ -4642,7 +4642,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@keystonehq/eth-keyring@^0.14.00.3":
+"@keystonehq/eth-keyring@npm:^0.14.4":
   version: 0.14.4
   resolution: "@keystonehq/eth-keyring@npm:0.14.4"
   dependencies:
@@ -9328,6 +9328,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@web3-onboard/hw-common@npm:^2.3.2":
+  version: 2.3.3
+  resolution: "@web3-onboard/hw-common@npm:2.3.3"
+  dependencies:
+    "@ethereumjs/common": "npm:2.6.2"
+    "@web3-onboard/common": "npm:^2.4.1"
+    bignumber.js: "npm:^9.1.0"
+    ethers: "npm:5.5.4"
+    joi: "npm:17.9.1"
+    rxjs: "npm:^7.5.2"
+  checksum: 10/eccb0e49a1213dcf6e8e84a86c2ad5029ef78d64a65d874dc3b440bc876a2154e39b82f5c791d88502d13b89e2e598aaf11b8d5614cd0f88930464dd7739687d
+  languageName: node
+  linkType: hard
+
 "@web3-onboard/injected-wallets@npm:^2.11.2":
   version: 2.11.2
   resolution: "@web3-onboard/injected-wallets@npm:2.11.2"
@@ -9339,16 +9353,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@web3-onboard/keystone@npm:^2.3.7":
-  version: 2.3.7
-  resolution: "@web3-onboard/keystone@npm:2.3.7"
+"@web3-onboard/keystone@git+https://github.com/compojoom/web3-onboard-fix-keystone.git":
+  version: 2.3.10
+  resolution: "@web3-onboard/keystone@https://github.com/compojoom/web3-onboard-fix-keystone.git#commit=956cb472471370da356341527350a998a01aecbd"
   dependencies:
     "@ethereumjs/tx": "npm:^3.4.0"
     "@ethersproject/providers": "npm:^5.5.0"
-    "@keystonehq/eth-keyring": ^0.14.00.3
-    "@web3-onboard/common": "npm:^2.3.3"
-    "@web3-onboard/hw-common": "npm:^2.3.0"
-  checksum: 10/4fb6e5719266050fd665c2de891a2d679d06284fe5863ce225dc64a7841314ff8f003b4a2516e01a4ff26365dbd4e2fe9fec6deb5b5619c914772760aecbd1b8
+    "@keystonehq/eth-keyring": "npm:^0.14.4"
+    "@web3-onboard/common": "npm:^2.4.1"
+    "@web3-onboard/hw-common": "npm:^2.3.2"
+  checksum: 10/738d75acb5942cfb07e880cddc97b589f0f431f229c530adff4e724aa41405598b32d76cdf28d93a49192b15bca22bac759b70e821b514227d881fd2631ab79f
   languageName: node
   linkType: hard
 
@@ -10617,7 +10631,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bignumber.js@npm:^9.0.0, bignumber.js@npm:^9.0.1, bignumber.js@npm:^9.1.1, bignumber.js@npm:^9.1.2":
+"bignumber.js@npm:^9.0.0, bignumber.js@npm:^9.0.1, bignumber.js@npm:^9.1.0, bignumber.js@npm:^9.1.1, bignumber.js@npm:^9.1.2":
   version: 9.1.2
   resolution: "bignumber.js@npm:9.1.2"
   checksum: 10/d89b8800a987225d2c00dcbf8a69dc08e92aa0880157c851c287b307d31ceb2fc2acb0c62c3e3a3d42b6c5fcae9b004035f13eb4386e56d529d7edac18d5c9d8
@@ -22990,7 +23004,7 @@ __metadata:
     "@web3-onboard/coinbase": "npm:^2.2.6"
     "@web3-onboard/core": "npm:^2.21.4"
     "@web3-onboard/injected-wallets": "npm:^2.11.2"
-    "@web3-onboard/keystone": "npm:^2.3.7"
+    "@web3-onboard/keystone": "git+https://github.com/compojoom/web3-onboard-fix-keystone.git"
     "@web3-onboard/ledger": "npm:2.3.2"
     "@web3-onboard/trezor": "npm:^2.4.2"
     "@web3-onboard/walletconnect": "npm:^2.6.1"
