@@ -1,10 +1,10 @@
 import { renderHook } from '@/tests/test-utils'
-import { getCompatibilityFallbackHandlerDeployments } from '@safe-global/safe-deployments'
+import { getCompatibilityFallbackHandlerDeployments } from 'safe-deployments-f'
 import { useCompatibilityFallbackHandlerDeployments } from '../useCompatibilityFallbackHandlerDeployments'
 import useSafeInfo from '@/hooks/useSafeInfo'
 import { useCurrentChain } from '@/hooks/useChains'
 
-jest.mock('@safe-global/safe-deployments')
+jest.mock('safe-deployments-f')
 jest.mock('@/hooks/useSafeInfo')
 jest.mock('@/hooks/useChains')
 
