@@ -58,15 +58,11 @@ import { sameAddress } from '@/utils/addresses'
 import type { NamedAddress } from '@/components/new-safe/create/types'
 import type { RecoveryQueueItem } from '@/features/recovery/services/recovery-state'
 import { ethers } from 'ethers'
-import {
-  getSafeToL2MigrationDeployment,
-  getSafeMigrationDeployment,
-  getMultiSendDeployments,
-} from '@safe-global/safe-deployments'
+import { getSafeToL2MigrationDeployment, getSafeMigrationDeployment, getMultiSendDeployments } from 'safe-deployments-f'
 import { Safe__factory, Safe_to_l2_migration__factory } from '@/types/contracts'
 import { hasMatchingDeployment } from '@/services/contracts/deployments'
 import { isMultiSendCalldata } from './transaction-calldata'
-import { decodeMultiSendData } from '@safe-global/protocol-kit/dist/src/utils'
+import { decodeMultiSendData } from 'protocol-kit-forked/dist/src/utils'
 import { OperationType } from '@safe-global/safe-core-sdk-types'
 import { LATEST_SAFE_VERSION } from '@/config/constants'
 import { extractMigrationL2MasterCopyAddress } from '@/features/multichain/utils/extract-migration-data'

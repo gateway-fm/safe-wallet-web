@@ -11,7 +11,7 @@ import type { AddressEx, TokenInfo } from '@safe-global/safe-gateway-typescript-
 import { type AllowanceModule } from '@/types/contracts'
 import { getERC20TokenInfoOnChain } from '@/utils/tokens'
 
-import { sameString } from '@safe-global/protocol-kit/dist/src/utils'
+import { sameString } from 'protocol-kit-forked/dist/src/utils'
 import { useAppSelector } from '@/store'
 import { selectTokens } from '@/store/balancesSlice'
 import isEqual from 'lodash/isEqual'

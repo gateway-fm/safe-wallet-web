@@ -7,13 +7,13 @@ import { chainBuilder } from '@/tests/builders/chains'
 import * as sdk from '@/services/tx/tx-sender/sdk'
 import * as cgwSdk from '@safe-global/safe-client-gateway-sdk'
 import * as web3 from '@/hooks/wallets/web3'
-import { encodeMultiSendData, type SafeProvider } from '@safe-global/protocol-kit'
+import { encodeMultiSendData, type SafeProvider } from 'protocol-kit-forked'
 import { Safe__factory, Safe_proxy_factory__factory } from '@/types/contracts'
 import { type JsonRpcProvider } from 'ethers'
-import { Multi_send__factory } from '@/types/contracts/factories/@safe-global/safe-deployments/dist/assets/v1.3.0'
+import { Multi_send__factory } from '@/types/contracts/factories/safe-deployments-f/dist/assets/v1.3.0'
 import { type ChainInfo } from '@safe-global/safe-gateway-typescript-sdk'
-import { EMPTY_DATA, ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
-import { getSafeSingletonDeployment, getSafeToL2SetupDeployment } from '@safe-global/safe-deployments'
+import { EMPTY_DATA, ZERO_ADDRESS } from 'protocol-kit-forked/dist/src/utils/constants'
+import { getSafeSingletonDeployment, getSafeToL2SetupDeployment } from 'safe-deployments-f'
 
 const setupToL2Address = getSafeToL2SetupDeployment({ version: '1.4.1' })?.defaultAddress!
 

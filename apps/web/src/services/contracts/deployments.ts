@@ -8,8 +8,8 @@ import {
   getProxyFactoryDeployment,
   getSignMessageLibDeployment,
   getCreateCallDeployment,
-} from '@safe-global/safe-deployments'
-import type { SingletonDeployment, DeploymentFilter, SingletonDeploymentV2 } from '@safe-global/safe-deployments'
+} from 'safe-deployments-f'
+import type { SingletonDeployment, DeploymentFilter, SingletonDeploymentV2 } from 'safe-deployments-f'
 import type { ChainInfo, SafeInfo } from '@safe-global/safe-gateway-typescript-sdk'
 import { getLatestSafeVersion } from '@/utils/chains'
 import { sameAddress } from '@/utils/addresses'
