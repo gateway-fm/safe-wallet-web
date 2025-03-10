@@ -9,6 +9,7 @@ const WalletLogin = ({ onLogin, onContinue }: { onLogin: () => void; onContinue:
   const connectWallet = useConnectWallet()
 
   const onConnectWallet = () => {
+    console.log('clicking on wallet button')
     connectWallet()
     onLogin()
   }

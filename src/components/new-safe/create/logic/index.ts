@@ -207,6 +207,7 @@ export const createNewUndeployedSafeWithoutSalt = (
   },
   chain: ChainInfo,
 ): UndeployedSafeWithoutSalt => {
+  // safeVersion = '1.4.1'
   // Create universal deployment Data across chains:
   const fallbackHandlerDeployment = getCompatibilityFallbackHandlerDeployment({
     version: safeVersion,
@@ -221,6 +222,15 @@ export const createNewUndeployedSafeWithoutSalt = (
 
   const safeFactoryDeployment = getProxyFactoryDeployment({ version: safeVersion, network: chain.chainId })
   const safeFactoryAddress = safeFactoryDeployment?.networkAddresses[chain.chainId]
+
+  // console.log(chain)
+  // console.log(chain.chainId)
+  // console.log(safeVersion)
+  // console.log('popa')
+  // console.log(safeL2Address)
+  // console.log(safeL1Address)
+  // console.log(safeFactoryAddress)
+  // console.log(fallbackHandlerAddress)
 
   if (!safeL2Address || !safeL1Address || !safeFactoryAddress || !fallbackHandlerAddress) {
     throw new Error('No Safe deployment found')
@@ -278,6 +288,10 @@ export const migrateLegacySafeProps = (predictedSafeProps: PredictedSafeProps, c
 
   const safeFactoryDeployment = getProxyFactoryDeployment({ version: safeVersion, network: chainId })
   const safeFactoryAddress = safeFactoryDeployment?.defaultAddress
+
+  // console.log(masterCopyAddress)
+  // console.log(safeFactoryAddress)
+  // console.log(fallbackHandlerAddress)
 
   if (!masterCopyAddress || !safeFactoryAddress || !fallbackHandlerAddress) {
     throw new Error('No Safe deployment found')

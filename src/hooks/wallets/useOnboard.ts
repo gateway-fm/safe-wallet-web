@@ -113,12 +113,19 @@ export const connectWallet = async (
     return
   }
 
+  console.log('connecting')
+
   isConnecting = true
 
   let wallets: WalletState[] | undefined
 
+  console.log(wallets)
+
   try {
     wallets = await onboard.connectWallet(options)
+
+    console.log(wallets)
+
   } catch (e) {
     logError(Errors._302, e)
     isConnecting = false
