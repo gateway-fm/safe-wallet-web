@@ -35,10 +35,10 @@ import { type ExtendedSafeInfo } from '@/store/safeInfoSlice'
 import { getSafeContractDeployment } from '@/services/contracts/deployments'
 import { sameAddress } from './addresses'
 import { isMultiSendCalldata } from './transaction-calldata'
-import { decodeMultiSendData } from '@safe-global/protocol-kit/dist/src/utils'
+import { decodeMultiSendData } from 'protocol-kit-forked/dist/src/utils'
 import { __unsafe_createMultiSendTx } from '@/services/tx/tx-sender'
 import { getOriginPath } from './url'
-import { getSafeToL2MigrationDeployment } from '@safe-global/safe-deployments'
+import { getSafeToL2MigrationDeployment } from 'safe-deployments-f'
 
 export const makeTxFromDetails = (txDetails: TransactionDetails): Transaction => {
   const getMissingSigners = ({

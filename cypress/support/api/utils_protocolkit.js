@@ -1,4 +1,4 @@
-import Safe from '@safe-global/protocol-kit'
+import Safe from 'protocol-kit-forked'
 
 export async function createSafes(safeConfigurations) {
   const safes = []
