@@ -159,6 +159,14 @@
     "typescript": "^5.4.5",
     "typescript-plugin-css-modules": "^4.2.2"
   },
+  "resolutions": {
+    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.9",
+    "@safe-global/api-kit": "npm:@gateway-fm/api-kit@latest",
+    "@safe-global/relay-kit": "npm:@gateway-fm/relay-kit@latest",
+    "@safe-global/sdk-starter-kit": "npm:@gateway-fm/sdk-starter-kit@latest",
+    "@safe-global/testing-kit": "npm:@gateway-fm/testing-kit@latest",
+    "@safe-global/types-kit": "npm:@gateway-fm/types-kit@latest"
+  },
   "nextBundleAnalysis": {
     "budget": null,
     "budgetPercentIncreaseRed": 20,

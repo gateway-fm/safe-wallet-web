@@ -15,12 +15,12 @@
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "resolutions": {
-    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.3",
-    "@safe-global/api-kit": "npm:@gateway-fm/api-kit@3.0.1",
-    "@safe-global/relay-kit": "npm:@gateway-fm/relay-kit@4.0.1",
-    "@safe-global/sdk-starter-kit": "npm:@gateway-fm/sdk-starter-kit@2.0.1",
-    "@safe-global/testing-kit": "npm:@gateway-fm/testing-kit@0.2.1",
-    "@safe-global/types-kit": "npm:@gateway-fm/types-kit@2.0.1",
+    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.9",
+    "@safe-global/api-kit": "npm:@gateway-fm/api-kit@latest",
+    "@safe-global/relay-kit": "npm:@gateway-fm/relay-kit@latest",
+    "@safe-global/sdk-starter-kit": "npm:@gateway-fm/sdk-starter-kit@latest",
+    "@safe-global/testing-kit": "npm:@gateway-fm/testing-kit@latest",
+    "@safe-global/types-kit": "npm:@gateway-fm/types-kit@latest",
     "@safe-global/safe-core-sdk-types/ethers": "6.13.4",
     "@safe-global/protocol-kit/ethers": "6.13.4",
     "@safe-global/api-kit/ethers": "6.13.4",
