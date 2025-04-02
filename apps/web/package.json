@@ -36,6 +36,14 @@
   "engines": {
     "node": ">=18"
   },
+  "resolutions": {
+    "@safe-global/protocol-kit": "npm:@astrasource/protocol-kit@latest",
+    "@safe-global/api-kit": "npm:@astrasource/api-kit@latest",
+    "@safe-global/relay-kit": "npm:@astrasource/relay-kit@latest",
+    "@safe-global/sdk-starter-kit": "npm:@astrasource/sdk-starter-kit@latest",
+    "@safe-global/testing-kit": "npm:@astrasource/testing-kit@latest",
+    "@safe-global/types-kit": "npm:@astrasource/types-kit@latest"
+  },
   "dependencies": {
     "@cowprotocol/widget-react": "^0.13.0",
     "@ducanh2912/next-pwa": "^10.2.9",
