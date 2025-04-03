@@ -17,7 +17,7 @@ describe('Counterfactual utils', () => {
           owners: [faker.finance.ethereumAddress()],
           threshold: 1,
         },
-        safeDeploymentConfig: {},
+        safeDeploymentConfig: {} as any, // TODO: FIXME: fix this
       }
       const mockAddress = faker.finance.ethereumAddress()
       const mockChainId = '1'

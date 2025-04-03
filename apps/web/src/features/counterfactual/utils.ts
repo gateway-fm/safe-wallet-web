@@ -359,7 +359,7 @@ export const extractCounterfactualSafeSetup = (
     fallbackHandler,
     safeVersion,
     saltNonce,
-  }
+  } as any // TODO: FIXME: fix this
 }
 
 export const activateReplayedSafe = async (

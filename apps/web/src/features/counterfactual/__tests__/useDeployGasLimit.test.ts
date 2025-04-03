@@ -6,7 +6,7 @@ import * as sdk from '@/services/tx/tx-sender/sdk'
 import { safeTxBuilder } from '@/tests/builders/safeTx'
 import * as protocolKit from '@gateway-fm/protocol-kit'
 import * as protocolKitContracts from '@gateway-fm/protocol-kit'
-import type Safe from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 
 import { renderHook } from '@/tests/test-utils'
 import type {

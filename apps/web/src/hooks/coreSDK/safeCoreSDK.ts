@@ -5,7 +5,7 @@ import ExternalStore from '@/services/ExternalStore'
 import { Gnosis_safe__factory } from '@/types/contracts'
 import { invariant } from '@/utils/helpers'
 import type { JsonRpcProvider } from 'ethers'
-import type Safe from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 import type { SafeVersion } from '@safe-global/safe-core-sdk-types'
 import type { SafeInfo } from '@safe-global/safe-gateway-typescript-sdk'
 import semverSatisfies from 'semver/functions/satisfies'
@@ -86,7 +86,7 @@ export const initSafeSDK = async ({
       return Safe.init({
         provider: provider._getConnection().url,
         isL1SafeSingleton,
-        predictedSafe: undeployedSafe.props,
+        predictedSafe: undeployedSafe.props as any, // TODO: FIXME: fix this
       })
     }
     // We cannot initialize a Core SDK for replayed Safes yet.

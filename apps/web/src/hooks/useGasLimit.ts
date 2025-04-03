@@ -1,6 +1,6 @@
 import { SafeProvider } from '@gateway-fm/protocol-kit'
 import { useEffect } from 'react'
-import type Safe from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 import { encodeSignatures } from '@/services/tx/encodeSignatures'
 import type { SafeTransaction } from '@safe-global/safe-core-sdk-types'
 import useAsync from '@/hooks/useAsync'

@@ -1,7 +1,7 @@
 import { Gnosis_safe__factory } from '@/types/contracts'
 import { JsonRpcProvider, toBeHex } from 'ethers'
-import type Safe from '@gateway-fm/protocol-kit'
-import { getProxyFactoryContract, getSafeContract } from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
+import { getSafeProxyFactoryContract, getSafeContract } from '@gateway-fm/protocol-kit'
 import { ImplementationVersionState } from '@safe-global/safe-gateway-typescript-sdk'
 import { initSafeSDK, isValidSafeVersion } from '../safeCoreSDK'
 
@@ -71,7 +71,7 @@ describe('safeCoreSDK', () => {
     const MAINNET_MASTER_COPY = '0xd9Db270c1B5E3Bd161E8c8503c55cEABeE709552' // L1
     const POLYGON_MASTER_COPY = '0x3E5c63644E683549055b9Be8653de26E0B4CD36E' // L2
 
-    ;(getProxyFactoryContract as jest.Mock).mockImplementation(async () => {
+    ;(getSafeProxyFactoryContract as jest.Mock).mockImplementation(async () => {
       return await Promise.resolve({
         getAddress: jest.fn(),
         proxyCreationCode: jest.fn(),

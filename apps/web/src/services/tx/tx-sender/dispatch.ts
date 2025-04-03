@@ -212,7 +212,7 @@ export const dispatchSafeTxSpeedUp = async (
         transactionResponse: null,
       }
     } else {
-      result = await sdk.executeTransaction(safeTx, txOptions)
+      result = (await sdk.executeTransaction(safeTx, txOptions)) as any // TODO: FIXME: fix this
     }
     txDispatch(TxEvent.EXECUTING, eventParams)
   } catch (error) {
@@ -222,14 +222,14 @@ export const dispatchSafeTxSpeedUp = async (
 
   txDispatch(TxEvent.PROCESSING, {
     ...eventParams,
-    txHash: result.hash,
+    txHash: result?.hash as string, // TODO: FIXME: fix this
     signerAddress,
     signerNonce,
     gasLimit: txOptions.gasLimit,
     txType: 'SafeTx',
   })
 
-  return result.hash
+  return result?.hash as string // TODO: FIXME: fix this
 }
 
 export const dispatchCustomTxSpeedUp = async (
@@ -302,7 +302,7 @@ export const dispatchTxExecution = async (
         transactionResponse: null,
       }
     } else {
-      result = await sdk.executeTransaction(safeTx, txOptions)
+      result = (await sdk.executeTransaction(safeTx, txOptions)) as any // TODO: FIXME: fix this
     }
     txDispatch(TxEvent.EXECUTING, { ...eventParams })
   } catch (error) {
@@ -313,14 +313,14 @@ export const dispatchTxExecution = async (
   txDispatch(TxEvent.PROCESSING, {
     ...eventParams,
     nonce: safeTx.data.nonce,
-    txHash: result.hash,
+    txHash: result?.hash as string, // TODO: FIXME: fix this¸
     signerAddress,
     signerNonce,
     gasLimit: txOptions.gasLimit,
     txType: 'SafeTx',
   })
 
-  return result.hash
+  return result?.hash as string // TODO: FIXME: fix this
 }
 
 export const dispatchBatchExecution = async (
@@ -504,7 +504,8 @@ export const dispatchTxRelay = async (
   const readOnlySafeContract = await getReadOnlyCurrentGnosisSafeContract(safe)
 
   let transactionToRelay = safeTx
-  const data = readOnlySafeContract.encode('execTransaction', [
+  const data = (readOnlySafeContract as any)?.encode?.('execTransaction', [
+    // TODO: FIXME: fix this
     transactionToRelay.data.to,
     transactionToRelay.data.value,
     transactionToRelay.data.data,
@@ -549,7 +550,7 @@ export const dispatchBatchExecutionRelay = async (
   safeVersion: string,
 ) => {
   const to = await multiSendContract.getAddress()
-  const data = multiSendContract.contract.interface.encodeFunctionData('multiSend', [multiSendTxData])
+  const data = (multiSendContract as any).contract?.interface.encodeFunctionData('multiSend', [multiSendTxData]) // TODO: FIXME: fix this
   const groupKey = multiSendTxData
 
   let relayResponse

@@ -104,7 +104,7 @@ export async function getRecoverySkipTransaction(
   recovery: RecoveryQueueItem,
   provider: Provider,
 ): Promise<MetaTransactionData> {
-  const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider)
+  const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider as any) // TODO: FIXME: fix this
 
   const newTxNonce = recovery.args.queueNonce + 1n
 

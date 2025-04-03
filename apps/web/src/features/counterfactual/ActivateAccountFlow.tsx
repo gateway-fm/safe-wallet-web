@@ -43,7 +43,7 @@ const useActivateAccount = (undeployedSafe: UndeployedSafe | undefined) => {
       ? undeployedSafe?.props.safeDeploymentConfig?.safeVersion
       : undeployedSafe?.props.safeVersion)
 
-  const { gasLimit } = useEstimateSafeCreationGas(undeployedSafe?.props, safeVersion)
+  const { gasLimit } = useEstimateSafeCreationGas(undeployedSafe?.props, safeVersion as any) // TODO: FIXME: fix this
 
   const isEIP1559 = chain && hasFeature(chain, FEATURES.EIP1559)
   const maxFeePerGas = gasPrice?.maxFeePerGas

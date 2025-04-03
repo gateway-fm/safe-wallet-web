@@ -6,7 +6,7 @@ import * as useSafeInfo from '../useSafeInfo'
 import * as useIsSafeOwner from '../useIsSafeOwner'
 
 import { mockContractManager } from '@/tests/mocks/contractManager'
-import type Safe from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 import { faker } from '@faker-js/faker'
 import { connectedWalletBuilder } from '@/tests/builders/wallet'
 import { createMockSafeTransaction } from '@/tests/transactions'

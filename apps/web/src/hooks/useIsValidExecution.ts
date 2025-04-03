@@ -82,7 +82,8 @@ const useIsValidExecution = (
        * This also fixes the over-fetching issue of the monkey patched provider.
        */
 
-      return safeContract.contract.execTransaction.staticCall(
+      return (safeContract as any)?.contract?.execTransaction.staticCall(
+        // TODO: FIXME: fix this
         safeTx.data.to,
         safeTx.data.value,
         safeTx.data.data,

@@ -96,7 +96,8 @@ export const _getSingleTransactionPayload = async (
 
   const readOnlySafeContract = await getReadOnlyCurrentGnosisSafeContract(params.safe)
 
-  const input = readOnlySafeContract.encode('execTransaction', [
+  const input = (readOnlySafeContract as any)?.encode?.('execTransaction', [
+    // TODO: FIXME: fix this
     transaction.data.to,
     transaction.data.value,
     transaction.data.data,

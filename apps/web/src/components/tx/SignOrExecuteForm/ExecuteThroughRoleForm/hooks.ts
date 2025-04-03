@@ -266,8 +266,7 @@ const encodeExecuteThroughRole = (
   provider: JsonRpcProvider,
 ): Transaction => {
   const combinedMetaTx = encodeMetaTransactions(role, metaTransactions)
-
-  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider)
+  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider as any) //TODO: FIXME: fix this
   const data = rolesModifier.interface.encodeFunctionData('execTransactionWithRole', [
     combinedMetaTx.to,
     BigInt(combinedMetaTx.value),
@@ -293,7 +292,7 @@ const checkCondition = async (
 ) => {
   const combinedMetaTx = encodeMetaTransactions(role, metaTransactions)
 
-  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider)
+  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider as any) // TODO: FIXME: fix this
   try {
     await rolesModifier.execTransactionWithRole.estimateGas(
       combinedMetaTx.to,

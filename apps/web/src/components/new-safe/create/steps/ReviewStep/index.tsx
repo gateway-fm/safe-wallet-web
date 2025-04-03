@@ -244,7 +244,7 @@ const ReviewStep = ({ data, onSubmit, onBack, setStep }: StepRenderProps<NewSafe
         safeAddress = await computeNewSafeAddress(
           customRpcUrl || getRpcServiceUrl(chain.rpcUri),
           {
-            safeAccountConfig: replayedSafeWithNonce.safeAccountConfig,
+            safeAccountConfig: replayedSafeWithNonce.safeAccountConfig as any, // TODO: FIXME: fix this
             saltNonce: nextAvailableNonce,
           },
           chain,

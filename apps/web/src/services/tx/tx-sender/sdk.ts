@@ -1,5 +1,5 @@
 import { getSafeSDK } from '@/hooks/coreSDK/safeCoreSDK'
-import type Safe from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 import { SafeProvider, SigningMethod } from '@gateway-fm/protocol-kit'
 import { generatePreValidatedSignature, isSafeMultisigTransactionResponse, sameString } from '@gateway-fm/protocol-kit'
 import type { Eip1193Provider, JsonRpcSigner } from 'ethers'

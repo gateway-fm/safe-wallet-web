@@ -40,7 +40,7 @@ export async function _getRecoverySetupTransactions({
   const { transaction, expectedModuleAddress } = await deployAndSetUpModule(
     KnownContracts.DELAY,
     setupArgs,
-    provider,
+    provider as any, // TODO: FIXME: fix this
     Number(chainId),
     saltNonce,
   )
@@ -67,7 +67,7 @@ export async function _getRecoverySetupTransactions({
 
   transactions.push(enableDelayModifier)
 
-  const delayModifierContract = getModuleInstance(KnownContracts.DELAY, expectedModuleAddress, provider)
+  const delayModifierContract = getModuleInstance(KnownContracts.DELAY, expectedModuleAddress, provider as any) // TODO: FIXME: fix this
 
   // Add recoverers to Delay Modifier
   const enableDelayModifierModules: Array<MetaTransactionData> = recoverers.map((recoverer) => {
@@ -99,7 +99,7 @@ export async function _getEditRecoveryTransactions({
   moduleAddress: string
   provider: JsonRpcProvider
 }): Promise<Array<MetaTransactionData>> {
-  const delayModifierContract = getModuleInstance(KnownContracts.DELAY, moduleAddress, provider)
+  const delayModifierContract = getModuleInstance(KnownContracts.DELAY, moduleAddress, provider as any) // TODO: FIXME: fix this
 
   const [oldExpiry, oldDelay, [recoverers]] = await Promise.all([
     delayModifierContract.txExpiration(),

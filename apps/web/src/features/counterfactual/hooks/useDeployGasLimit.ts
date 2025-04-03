@@ -4,7 +4,7 @@ import useOnboard from '@/hooks/wallets/useOnboard'
 import useWallet from '@/hooks/wallets/useWallet'
 import { getSafeSDKWithSigner } from '@/services/tx/tx-sender/sdk'
 import { estimateSafeDeploymentGas, estimateTxBaseGas } from '@gateway-fm/protocol-kit'
-import type Safe from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 
 import { OperationType, type SafeTransaction } from '@safe-global/safe-core-sdk-types'
 import { getCompatibilityFallbackHandlerContract, getSimulateTxAccessorContract } from '@gateway-fm/protocol-kit'
