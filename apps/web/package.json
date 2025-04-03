@@ -43,6 +43,7 @@
     "@emotion/react": "^11.13.5",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.13.5",
+    "@gateway-fm/protocol-kit": "6.0.3-dev.2",
     "@gnosis.pm/zodiac": "^4.0.3",
     "@mui/icons-material": "^6.1.6",
     "@mui/material": "^6.3.0",
@@ -51,7 +52,6 @@
     "@reduxjs/toolkit": "^2.5.0",
     "@reown/walletkit": "^1.2.1",
     "@safe-global/api-kit": "^2.4.6",
-    "@safe-global/protocol-kit": "^4.1.5",
     "@safe-global/safe-apps-sdk": "^9.1.0",
     "@safe-global/safe-client-gateway-sdk": "v1.60.1",
     "@safe-global/safe-deployments": "^1.37.28",
@@ -161,7 +161,6 @@
     "typescript-plugin-css-modules": "^4.2.2"
   },
   "resolutions": {
-    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.3-dev.1",
     "@safe-global/api-kit": "npm:@gateway-fm/api-kit@latest",
     "@safe-global/relay-kit": "npm:@gateway-fm/relay-kit@latest",
     "@safe-global/sdk-starter-kit": "npm:@gateway-fm/sdk-starter-kit@latest",
