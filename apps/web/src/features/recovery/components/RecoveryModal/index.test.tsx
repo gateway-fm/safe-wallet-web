@@ -18,7 +18,6 @@ describe('RecoveryModal', () => {
   })
 
   describe('component', () => {
-    // eslint-disable-next-line @typescript-eslint/consistent-type-imports
     let _RecoveryModal: typeof import('./index').InternalRecoveryModal
 
     beforeEach(() => {
@@ -265,7 +264,6 @@ describe('RecoveryModal', () => {
     })
 
     describe('useDidDismissInProgress', () => {
-      // eslint-disable-next-line @typescript-eslint/consistent-type-imports
       let _useDidDismissInProgress: typeof import('./index').useDidDismissInProgress
 
       beforeEach(() => {
