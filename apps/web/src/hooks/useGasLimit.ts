@@ -13,10 +13,7 @@ import useIsSafeOwner from './useIsSafeOwner'
 import { Errors, logError } from '@/services/exceptions'
 import useSafeInfo from './useSafeInfo'
 import { estimateTxBaseGas } from '@gateway-fm/protocol-kit'
-import {
-  getCompatibilityFallbackHandlerContract,
-  getSimulateTxAccessorContract,
-} from '@gateway-fm/protocol-kit'
+import { getCompatibilityFallbackHandlerContract, getSimulateTxAccessorContract } from '@gateway-fm/protocol-kit'
 import { type JsonRpcProvider } from 'ethers'
 import { type ExtendedSafeInfo } from '@/store/safeInfoSlice'
 

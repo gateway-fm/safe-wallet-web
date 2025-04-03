@@ -89,7 +89,7 @@ describe('CheckWallet', () => {
   })
 
   it('should disable the button when the wallet is not connected', () => {
-    ; (useWallet as jest.MockedFunction<typeof useWallet>).mockReturnValueOnce(null)
+    ;(useWallet as jest.MockedFunction<typeof useWallet>).mockReturnValueOnce(null)
 
     const { getByText, getByLabelText } = renderButton()
 
@@ -101,7 +101,7 @@ describe('CheckWallet', () => {
   })
 
   it('should disable the button when the wallet is connected to the right chain but is not an owner', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
 
     const { getByText, getByLabelText } = renderButton()
 
@@ -110,8 +110,8 @@ describe('CheckWallet', () => {
   })
 
   it('should be disabled when connected to the wrong network', () => {
-    ; (useIsWrongChain as jest.MockedFunction<typeof useIsWrongChain>).mockReturnValue(true)
-      ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
+    ;(useIsWrongChain as jest.MockedFunction<typeof useIsWrongChain>).mockReturnValue(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
 
     const renderButtonWithNetworkCheck = () =>
       render(<CheckWallet checkNetwork={true}>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>)
@@ -122,10 +122,10 @@ describe('CheckWallet', () => {
   })
 
   it('should not disable the button for non-owner spending limit benificiaries', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
-      ; (
-        useIsOnlySpendingLimitBeneficiary as jest.MockedFunction<typeof useIsOnlySpendingLimitBeneficiary>
-      ).mockReturnValueOnce(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
+    ;(
+      useIsOnlySpendingLimitBeneficiary as jest.MockedFunction<typeof useIsOnlySpendingLimitBeneficiary>
+    ).mockReturnValueOnce(true)
 
     const { getByText } = render(
       <CheckWallet allowSpendingLimit>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>,
@@ -135,8 +135,8 @@ describe('CheckWallet', () => {
   })
 
   it('should not disable the button for proposers', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
-      ; (useIsWalletProposer as jest.MockedFunction<typeof useIsWalletProposer>).mockReturnValueOnce(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
+    ;(useIsWalletProposer as jest.MockedFunction<typeof useIsWalletProposer>).mockReturnValueOnce(true)
 
     const { getByText } = renderButton()
 
@@ -144,8 +144,8 @@ describe('CheckWallet', () => {
   })
 
   it('should disable the button for proposers if specified via flag', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
-      ; (useIsWalletProposer as jest.MockedFunction<typeof useIsWalletProposer>).mockReturnValueOnce(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
+    ;(useIsWalletProposer as jest.MockedFunction<typeof useIsWalletProposer>).mockReturnValueOnce(true)
 
     const { getByText } = render(
       <CheckWallet allowProposer={false}>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>,
@@ -155,8 +155,8 @@ describe('CheckWallet', () => {
   })
 
   it('should not disable the button for proposers that are also owners', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
-      ; (useIsWalletProposer as jest.MockedFunction<typeof useIsWalletProposer>).mockReturnValueOnce(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
+    ;(useIsWalletProposer as jest.MockedFunction<typeof useIsWalletProposer>).mockReturnValueOnce(true)
 
     const { getByText } = render(
       <CheckWallet allowProposer={false}>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>,
@@ -166,7 +166,7 @@ describe('CheckWallet', () => {
   })
 
   it('should disable the button for counterfactual Safes', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
 
     const safeAddress = faker.finance.ethereumAddress()
     const mockSafeInfo = {
@@ -177,9 +177,9 @@ describe('CheckWallet', () => {
         .build(),
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { getByText, getByLabelText } = renderButton()
 
@@ -188,7 +188,7 @@ describe('CheckWallet', () => {
   })
 
   it('should enable the button for counterfactual Safes if allowed', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(true)
 
     const safeAddress = faker.finance.ethereumAddress()
     const mockSafeInfo = {
@@ -199,9 +199,9 @@ describe('CheckWallet', () => {
         .build(),
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { getByText } = render(
       <CheckWallet allowUndeployedSafe>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>,
@@ -211,7 +211,7 @@ describe('CheckWallet', () => {
   })
 
   it('should allow non-owners if specified', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
 
     const { getByText } = render(
       <CheckWallet allowNonOwner>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>,
@@ -221,10 +221,10 @@ describe('CheckWallet', () => {
   })
 
   it('should not allow non-owners that have a spending limit without allowing spending limits', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
-      ; (
-        useIsOnlySpendingLimitBeneficiary as jest.MockedFunction<typeof useIsOnlySpendingLimitBeneficiary>
-      ).mockReturnValueOnce(true)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
+    ;(
+      useIsOnlySpendingLimitBeneficiary as jest.MockedFunction<typeof useIsOnlySpendingLimitBeneficiary>
+    ).mockReturnValueOnce(true)
 
     const { getByText } = render(<CheckWallet>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>)
 
@@ -239,9 +239,9 @@ describe('CheckWallet', () => {
       safe: extendedSafeInfoBuilder(),
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { getByText, getByLabelText } = render(
       <CheckWallet>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>,
@@ -264,9 +264,9 @@ describe('CheckWallet', () => {
       safeLoaded: false,
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { queryByText } = render(<CheckWallet>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>)
 
@@ -274,7 +274,7 @@ describe('CheckWallet', () => {
   })
 
   it('should allow nested Safe owners', () => {
-    ; (useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
+    ;(useIsSafeOwner as jest.MockedFunction<typeof useIsSafeOwner>).mockReturnValueOnce(false)
     mockUseNestedSafeOwners.mockReturnValue([faker.finance.ethereumAddress()])
 
     const { container } = render(<CheckWallet>{(isOk) => <button disabled={!isOk}>Continue</button>}</CheckWallet>)

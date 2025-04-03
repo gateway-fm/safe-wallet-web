@@ -73,7 +73,7 @@ describe('CheckWalletWithPermission', () => {
   })
 
   it('should disable the button when the wallet is not connected', () => {
-    ; (useWallet as jest.MockedFunction<typeof useWallet>).mockReturnValueOnce(null)
+    ;(useWallet as jest.MockedFunction<typeof useWallet>).mockReturnValueOnce(null)
 
     const { getByText, getByLabelText } = renderButton()
 
@@ -97,7 +97,7 @@ describe('CheckWalletWithPermission', () => {
   })
 
   it('should be disabled when connected to the wrong network', () => {
-    ; (useIsWrongChain as jest.MockedFunction<typeof useIsWrongChain>).mockReturnValue(true)
+    ;(useIsWrongChain as jest.MockedFunction<typeof useIsWrongChain>).mockReturnValue(true)
 
     const renderButtonWithNetworkCheck = () =>
       render(
@@ -121,9 +121,9 @@ describe('CheckWalletWithPermission', () => {
         .build(),
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { getByText, getByLabelText } = renderButton()
 
@@ -141,9 +141,9 @@ describe('CheckWalletWithPermission', () => {
         .build(),
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { getByText } = render(
       <CheckWalletWithPermission permission={Permission.SignTransaction} allowUndeployedSafe>
@@ -162,9 +162,9 @@ describe('CheckWalletWithPermission', () => {
       safe: extendedSafeInfoBuilder(),
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { getByText, getByLabelText } = render(
       <CheckWalletWithPermission permission={Permission.SignTransaction}>
@@ -189,9 +189,9 @@ describe('CheckWalletWithPermission', () => {
       safeLoaded: false,
     }
 
-      ; (useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
-        mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
-      )
+    ;(useSafeInfo as jest.MockedFunction<typeof useSafeInfo>).mockReturnValueOnce(
+      mockSafeInfo as unknown as ReturnType<typeof useSafeInfo>,
+    )
 
     const { queryByText } = render(
       <CheckWalletWithPermission permission={Permission.SignTransaction}>

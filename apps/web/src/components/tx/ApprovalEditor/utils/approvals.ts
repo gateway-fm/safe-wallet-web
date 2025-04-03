@@ -47,10 +47,10 @@ export const extractTxs: (txs: BaseTransaction[] | (DecodedDataResponse & { to: 
     if (txParam.name === TRANSACTIONS_PARAM) {
       return txParam.valueDecoded
         ? txParam.valueDecoded.map((innerTx) => ({
-          to: innerTx.to,
-          data: innerTx.data || EMPTY_DATA,
-          value: innerTx.value,
-        }))
+            to: innerTx.to,
+            data: innerTx.data || EMPTY_DATA,
+            value: innerTx.value,
+          }))
         : []
     }
   }

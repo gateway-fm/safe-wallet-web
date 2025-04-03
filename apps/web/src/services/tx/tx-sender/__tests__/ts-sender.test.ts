@@ -241,7 +241,7 @@ describe('txSender', () => {
     })
 
     it('should fail to propose a signature', async () => {
-      ; (proposeTx as jest.Mock).mockImplementationOnce(() => Promise.reject(new Error('error')))
+      ;(proposeTx as jest.Mock).mockImplementationOnce(() => Promise.reject(new Error('error')))
 
       const tx = await createTx({
         to: '0x123',
@@ -260,7 +260,7 @@ describe('txSender', () => {
     })
 
     it('should fail to propose a new tx', async () => {
-      ; (proposeTx as jest.Mock).mockImplementationOnce(() => Promise.reject(new Error('error')))
+      ;(proposeTx as jest.Mock).mockImplementationOnce(() => Promise.reject(new Error('error')))
 
       const tx = await createTx({
         to: '0x123',
@@ -340,7 +340,7 @@ describe('txSender', () => {
     })
 
     it('should throw the non-rejection error if it is the final signing method', async () => {
-      ; (mockSafeSDK.signTransaction as jest.Mock).mockImplementationOnce(() =>
+      ;(mockSafeSDK.signTransaction as jest.Mock).mockImplementationOnce(() =>
         Promise.reject(new Error('failure-specific error')),
       ) // `eth_signTypedData` fails
 

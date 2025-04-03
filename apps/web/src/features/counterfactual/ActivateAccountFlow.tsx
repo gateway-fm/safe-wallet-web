@@ -51,10 +51,10 @@ const useActivateAccount = (undeployedSafe: UndeployedSafe | undefined) => {
 
   const options: DeploySafeProps['options'] = isEIP1559
     ? {
-      maxFeePerGas: maxFeePerGas?.toString(),
-      maxPriorityFeePerGas: maxPriorityFeePerGas?.toString(),
-      gasLimit: gasLimit?.toString(),
-    }
+        maxFeePerGas: maxFeePerGas?.toString(),
+        maxPriorityFeePerGas: maxPriorityFeePerGas?.toString(),
+        gasLimit: gasLimit?.toString(),
+      }
     : { gasPrice: maxFeePerGas?.toString(), gasLimit: gasLimit?.toString() }
 
   const totalFee = getTotalFeeFormatted(maxFeePerGas, gasLimit, chain)

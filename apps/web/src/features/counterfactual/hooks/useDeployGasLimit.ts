@@ -7,10 +7,7 @@ import { estimateSafeDeploymentGas, estimateTxBaseGas } from '@gateway-fm/protoc
 import type Safe from '@gateway-fm/protocol-kit'
 
 import { OperationType, type SafeTransaction } from '@safe-global/safe-core-sdk-types'
-import {
-  getCompatibilityFallbackHandlerContract,
-  getSimulateTxAccessorContract,
-} from '@gateway-fm/protocol-kit'
+import { getCompatibilityFallbackHandlerContract, getSimulateTxAccessorContract } from '@gateway-fm/protocol-kit'
 
 import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 

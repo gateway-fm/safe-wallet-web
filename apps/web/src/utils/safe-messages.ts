@@ -60,9 +60,9 @@ export const generateSafeMessageTypedData = (
   return {
     domain: isHandledByFallbackHandler
       ? {
-        chainId,
-        verifyingContract: address.value,
-      }
+          chainId,
+          verifyingContract: address.value,
+        }
       : { verifyingContract: address.value },
     types: {
       SafeMessage: [{ name: 'message', type: 'bytes' }],

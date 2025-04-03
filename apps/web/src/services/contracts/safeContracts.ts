@@ -151,7 +151,7 @@ export const isMigrationToL2Possible = (safe: SafeInfo): boolean => {
     safe.nonce === 0 &&
     Boolean(
       getSafeMigrationDeployment({ network: safe.chainId, version: SAFE_TO_L2_MIGRATION_VERSION })?.networkAddresses[
-      safe.chainId
+        safe.chainId
       ],
     )
   )

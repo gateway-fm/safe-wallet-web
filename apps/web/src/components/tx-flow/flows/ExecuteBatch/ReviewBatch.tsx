@@ -73,9 +73,9 @@ export const ReviewBatch = ({ params }: { params: ExecuteBatchFlowProps }) => {
   } = useGetMultipleTransactionDetailsQuery(
     chain?.chainId && params.txs.length
       ? {
-        chainId: chain.chainId,
-        txIds: params.txs.map((tx) => tx.transaction.id),
-      }
+          chainId: chain.chainId,
+          txIds: params.txs.map((tx) => tx.transaction.id),
+        }
       : skipToken,
   )
 

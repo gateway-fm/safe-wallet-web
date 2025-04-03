@@ -12,13 +12,13 @@ import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 
 const setupFetchStub =
   (data: any, status: number = 200) =>
-    () => {
-      return Promise.resolve({
-        json: () => Promise.resolve(data),
-        status,
-        ok: status === 200,
-      })
-    }
+  () => {
+    return Promise.resolve({
+      json: () => Promise.resolve(data),
+      status,
+      ok: status === 200,
+    })
+  }
 
 describe('_getRedeemDeadline', () => {
   const mockProvider = {

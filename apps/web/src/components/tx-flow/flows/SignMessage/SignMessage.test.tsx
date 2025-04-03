@@ -213,7 +213,7 @@ describe('SignMessage', () => {
     jest.spyOn(useIsSafeOwnerHook, 'default').mockImplementation(() => true)
     jest.spyOn(onboard, 'default').mockReturnValue(mockOnboard)
     jest.spyOn(useWalletHook, 'default').mockReturnValue({} as ConnectedWallet)
-      ; (getSafeMessage as jest.Mock).mockRejectedValue(new Error('SafeMessage not found'))
+    ;(getSafeMessage as jest.Mock).mockRejectedValue(new Error('SafeMessage not found'))
 
     const { getByText, baseElement } = render(
       <SignMessage
@@ -241,7 +241,7 @@ describe('SignMessage', () => {
       confirmationsSubmitted: 1,
     } as unknown as SafeMessage
 
-      ; (getSafeMessage as jest.Mock).mockResolvedValue(msg)
+    ;(getSafeMessage as jest.Mock).mockResolvedValue(msg)
 
     const button = getByText('Sign')
 
@@ -328,7 +328,7 @@ describe('SignMessage', () => {
       preparedSignature: '0x789',
     } as unknown as SafeMessage
 
-      ; (getSafeMessage as jest.Mock).mockResolvedValue(newMsg)
+    ;(getSafeMessage as jest.Mock).mockResolvedValue(newMsg)
 
     act(() => {
       fireEvent.click(button)
@@ -479,7 +479,7 @@ describe('SignMessage', () => {
     jest.spyOn(useSafeMessage, 'default').mockReturnValue([undefined, jest.fn(), undefined])
 
     jest.spyOn(useIsSafeOwnerHook, 'default').mockImplementation(() => true)
-      ; (getSafeMessage as jest.Mock).mockRejectedValue(new Error('SafeMessage not found'))
+    ;(getSafeMessage as jest.Mock).mockRejectedValue(new Error('SafeMessage not found'))
 
     const proposalSpy = jest
       .spyOn(sender, 'dispatchSafeMsgProposal')
@@ -542,7 +542,7 @@ describe('SignMessage', () => {
       confirmationsRequired: 2,
       confirmationsSubmitted: 1,
     } as unknown as SafeMessage
-      ; (getSafeMessage as jest.Mock).mockResolvedValue(msg)
+    ;(getSafeMessage as jest.Mock).mockResolvedValue(msg)
 
     jest.spyOn(useSafeMessage, 'default').mockReturnValue([msg, jest.fn(), undefined])
 
@@ -614,7 +614,7 @@ describe('SignMessage', () => {
     } as unknown as SafeMessage
 
     jest.spyOn(useSafeMessage, 'default').mockReturnValue([msg, jest.fn(), undefined])
-      ; (getSafeMessage as jest.Mock).mockResolvedValue(msg)
+    ;(getSafeMessage as jest.Mock).mockResolvedValue(msg)
 
     const { getByText } = render(
       <SignMessage logoUri="www.fake.com/test.png" name="Test App" message={messageText} requestId="123" />,

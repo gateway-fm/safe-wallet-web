@@ -54,7 +54,7 @@ export const useMetaTransactions = (safeTx?: SafeTransaction): MetaTransactionDa
         if (baseTransactions.length > 0) {
           return baseTransactions.map((tx) => ({ ...tx, operation: OperationType.Call }))
         }
-      } catch (e) { }
+      } catch (e) {}
     }
 
     return [metaTx]

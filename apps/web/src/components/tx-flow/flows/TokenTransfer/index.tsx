@@ -61,9 +61,9 @@ const TokenTransferFlow = ({ txNonce, ...params }: MultiTokenTransferFlowProps) 
       ...defaultParams,
       recipients: params.recipients
         ? params.recipients.map((recipient) => ({
-          ...defaultParams.recipients[0],
-          ...recipient,
-        }))
+            ...defaultParams.recipients[0],
+            ...recipient,
+          }))
         : defaultParams.recipients,
     },
     TxFlowType.TOKEN_TRANSFER,
@@ -88,7 +88,7 @@ const TokenTransferFlow = ({ txNonce, ...params }: MultiTokenTransferFlowProps) 
       },
       {
         txLayoutProps: { title: 'Confirm transaction details', fixedNonce: true },
-        content: <ConfirmTxDetails key={2} onSubmit={() => { }} isMassPayout={data.recipients.length > 1} />,
+        content: <ConfirmTxDetails key={2} onSubmit={() => {}} isMassPayout={data.recipients.length > 1} />,
       },
     ],
     [nextStep, data, txNonce],
