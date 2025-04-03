@@ -1,5 +1,4 @@
-FROM node:20
-RUN apk add --no-cache libc6-compat git python3 py3-pip make g++ libusb-dev eudev-dev linux-headers
+FROM node:20-slim
 
 # Set working directory
 WORKDIR /app
