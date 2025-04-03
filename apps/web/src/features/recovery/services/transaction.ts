@@ -1,6 +1,6 @@
 import { Interface } from 'ethers'
 import { getSafeSingletonDeployment } from '@safe-global/safe-deployments'
-import { SENTINEL_ADDRESS } from '@safe-global/protocol-kit'
+import { SENTINEL_ADDRESS } from '@gateway-fm/protocol-kit'
 import { OperationType } from '@safe-global/safe-core-sdk-types'
 import { sameAddress } from '@/utils/addresses'
 import { getModuleInstance, KnownContracts } from '@gnosis.pm/zodiac'

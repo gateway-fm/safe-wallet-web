@@ -1,7 +1,7 @@
 import { JsonRpcProvider } from 'ethers'
 import * as contracts from '@/services/contracts/safeContracts'
-import type { SafeProvider, CompatibilityFallbackHandlerContractImplementationType } from '@safe-global/protocol-kit'
-import { EMPTY_DATA, ZERO_ADDRESS } from '@safe-global/protocol-kit'
+import type { SafeProvider, CompatibilityFallbackHandlerContractImplementationType } from '@gateway-fm/protocol-kit'
+import { EMPTY_DATA, ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 import * as web3 from '@/hooks/wallets/web3'
 import * as sdkHelpers from '@/services/tx/tx-sender/sdk'
 import {

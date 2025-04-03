@@ -7,8 +7,8 @@ import { getReadOnlyProxyFactoryContract } from '@/services/contracts/safeContra
 import type { UrlObject } from 'url'
 import { AppRoutes } from '@/config/routes'
 import { SAFE_APPS_EVENTS, trackEvent } from '@/services/analytics'
-import { EMPTY_DATA, ZERO_ADDRESS, predictSafeAddress, SafeFactory, SafeProvider } from '@safe-global/protocol-kit'
-import type { DeploySafeProps, PredictedSafeProps } from '@safe-global/protocol-kit'
+import { EMPTY_DATA, ZERO_ADDRESS, predictSafeAddress, SafeFactory, SafeProvider } from '@gateway-fm/protocol-kit'
+import type { DeploySafeProps, PredictedSafeProps } from '@gateway-fm/protocol-kit'
 import { isValidSafeVersion } from '@/hooks/coreSDK/safeCoreSDK'
 
 import { backOff } from 'exponential-backoff'

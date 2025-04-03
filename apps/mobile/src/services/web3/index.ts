@@ -1,6 +1,6 @@
 import { ethers, JsonRpcProvider } from 'ethers'
 import { ChainInfo, RPC_AUTHENTICATION, RpcUri } from '@safe-global/safe-gateway-typescript-sdk'
-import Safe from '@safe-global/protocol-kit'
+import type Safe from '@gateway-fm/protocol-kit'
 import { SafeInfo } from '@/src/types/address'
 
 export const createWeb3ReadOnly = (chain: ChainInfo, customRpc?: string): JsonRpcProvider | undefined => {

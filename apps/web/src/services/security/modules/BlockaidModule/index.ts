@@ -1,7 +1,7 @@
 import { isEIP712TypedData } from '@/utils/safe-messages'
 import { normalizeTypedData } from '@/utils/web3'
 import { type SafeTransaction } from '@safe-global/safe-core-sdk-types'
-import { generateTypedData } from '@safe-global/protocol-kit'
+import { generateTypedData } from '@gateway-fm/protocol-kit'
 import type { EIP712TypedData } from '@safe-global/safe-gateway-typescript-sdk'
 import { type SecurityResponse, type SecurityModule, SecuritySeverity } from '../types'
 import type {

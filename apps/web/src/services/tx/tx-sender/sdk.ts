@@ -1,11 +1,11 @@
 import { getSafeSDK } from '@/hooks/coreSDK/safeCoreSDK'
-import type Safe from '@safe-global/protocol-kit'
-import { SafeProvider, SigningMethod } from '@safe-global/protocol-kit'
+import type Safe from '@gateway-fm/protocol-kit'
+import { SafeProvider, SigningMethod } from '@gateway-fm/protocol-kit'
 import {
   generatePreValidatedSignature,
   isSafeMultisigTransactionResponse,
   sameString,
-} from '@safe-global/protocol-kit'
+} from '@gateway-fm/protocol-kit'
 import type { Eip1193Provider, JsonRpcSigner } from 'ethers'
 import { isHardwareWallet, isWalletConnect } from '@/utils/wallets'
 import { OperationType, type SafeTransaction } from '@safe-global/safe-core-sdk-types'

@@ -1,6 +1,6 @@
 import { getSafeTokenAddress, getSafeLockingAddress } from '@/components/common/SafeTokenWidget'
 import { IS_PRODUCTION } from '@/config/constants'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 import { isPast } from 'date-fns'
 import { AbiCoder, Interface, type JsonRpcProvider } from 'ethers'
 import { useMemo } from 'react'

@@ -1,10 +1,10 @@
 import { Gnosis_safe__factory } from '@/types/contracts'
 import { JsonRpcProvider, toBeHex } from 'ethers'
-import Safe from '@safe-global/protocol-kit'
+import type Safe from '@gateway-fm/protocol-kit'
 import {
   getProxyFactoryContract,
   getSafeContract,
-} from '@safe-global/protocol-kit'
+} from '@gateway-fm/protocol-kit'
 import { ImplementationVersionState } from '@safe-global/safe-gateway-typescript-sdk'
 import { initSafeSDK, isValidSafeVersion } from '../safeCoreSDK'
 
@@ -15,7 +15,7 @@ jest.mock('@/services/contracts/safeContracts', () => {
   }
 })
 
-jest.mock('@safe-global/protocol-kit')
+jest.mock('@gateway-fm/protocol-kit')
 
 jest.mock('@/types/contracts', () => {
   return {
@@ -24,9 +24,9 @@ jest.mock('@/types/contracts', () => {
   }
 })
 
-jest.mock('@safe-global/protocol-kit', () => {
+jest.mock('@gateway-fm/protocol-kit', () => {
   return {
-    ...jest.requireActual('@safe-global/protocol-kit'),
+    ...jest.requireActual('@gateway-fm/protocol-kit'),
     __esModule: true,
     default: {
       init: jest.fn(),

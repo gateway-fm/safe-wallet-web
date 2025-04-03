@@ -18,8 +18,8 @@ import type { AppDispatch } from '@/store'
 import { defaultSafeInfo } from '@/store/safeInfoSlice'
 import { didRevert, type EthersError } from '@/utils/ethers-utils'
 import { assertProvider, assertTx, assertWallet } from '@/utils/helpers'
-import { type DeploySafeProps, type PredictedSafeProps } from '@safe-global/protocol-kit'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
+import { type DeploySafeProps, type PredictedSafeProps } from '@gateway-fm/protocol-kit'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 import type { SafeTransaction, SafeVersion, TransactionOptions } from '@safe-global/safe-core-sdk-types'
 import {
   type ChainInfo,

@@ -23,7 +23,7 @@ import { useAppSelector } from '@/store'
 import { hasFeature } from '@/utils/chains'
 import { hasRemainingRelays } from '@/utils/relaying'
 import { Box, Button, CircularProgress, Divider, Grid, Typography } from '@mui/material'
-import type { DeploySafeProps } from '@safe-global/protocol-kit'
+import type { DeploySafeProps } from '@gateway-fm/protocol-kit'
 import { FEATURES } from '@/utils/chains'
 import React, { useContext, useMemo, useState } from 'react'
 import { getLatestSafeVersion } from '@/utils/chains'
@@ -51,10 +51,10 @@ const useActivateAccount = (undeployedSafe: UndeployedSafe | undefined) => {
 
   const options: DeploySafeProps['options'] = isEIP1559
     ? {
-        maxFeePerGas: maxFeePerGas?.toString(),
-        maxPriorityFeePerGas: maxPriorityFeePerGas?.toString(),
-        gasLimit: gasLimit?.toString(),
-      }
+      maxFeePerGas: maxFeePerGas?.toString(),
+      maxPriorityFeePerGas: maxPriorityFeePerGas?.toString(),
+      gasLimit: gasLimit?.toString(),
+    }
     : { gasPrice: maxFeePerGas?.toString(), gasLimit: gasLimit?.toString() }
 
   const totalFee = getTotalFeeFormatted(maxFeePerGas, gasLimit, chain)

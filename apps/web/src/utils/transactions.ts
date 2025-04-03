@@ -31,7 +31,7 @@ import { Errors, logError } from '@/services/exceptions'
 import { type BaseTransaction } from '@safe-global/safe-apps-sdk'
 import { isEmptyHexData } from '@/utils/hex'
 import { isMultiSendCalldata } from './transaction-calldata'
-import { decodeMultiSendData } from '@safe-global/protocol-kit'
+import { decodeMultiSendData } from '@gateway-fm/protocol-kit'
 import { getOriginPath } from './url'
 
 export const makeTxFromDetails = (txDetails: TransactionDetails): Transaction => {

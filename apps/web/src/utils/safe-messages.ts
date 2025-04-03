@@ -1,6 +1,6 @@
 import { hashMessage, type TypedDataDomain, type JsonRpcSigner } from 'ethers'
 import { gte } from 'semver'
-import { adjustVInSignature } from '@safe-global/protocol-kit'
+import { adjustVInSignature } from '@gateway-fm/protocol-kit'
 
 import { hashTypedData } from '@/utils/web3'
 import { isValidAddress } from './validation'
@@ -13,7 +13,7 @@ import {
 import { FEATURES } from '@/utils/chains'
 
 import { hasFeature } from './chains'
-import { SigningMethod } from '@safe-global/protocol-kit'
+import { SigningMethod } from '@gateway-fm/protocol-kit'
 
 /*
  * From v1.3.0, EIP-1271 support was moved to the CompatibilityFallbackHandler.

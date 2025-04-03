@@ -1,6 +1,6 @@
 import { setSafeSDK } from '@/hooks/coreSDK/safeCoreSDK'
-import type Safe from '@safe-global/protocol-kit'
-import type { MultiSendCallOnlyContractImplementationType } from '@safe-global/protocol-kit'
+import type Safe from '@gateway-fm/protocol-kit'
+import type { MultiSendCallOnlyContractImplementationType } from '@gateway-fm/protocol-kit'
 import { type TransactionDetails } from '@safe-global/safe-gateway-typescript-sdk'
 import { getTransactionDetails } from '@safe-global/safe-gateway-typescript-sdk'
 import extractTxInfo from '../../extractTxInfo'
@@ -34,7 +34,7 @@ const setupFetchStub = (data: any) => () => {
   })
 }
 import { toBeHex } from 'ethers'
-import { generatePreValidatedSignature } from '@safe-global/protocol-kit'
+import { generatePreValidatedSignature } from '@gateway-fm/protocol-kit'
 import { createMockSafeTransaction } from '@/tests/transactions'
 import { MockEip1193Provider } from '@/tests/mocks/providers'
 import { SimpleTxWatcher } from '@/utils/SimpleTxWatcher'

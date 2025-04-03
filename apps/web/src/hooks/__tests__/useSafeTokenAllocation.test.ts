@@ -8,7 +8,7 @@ import useSafeTokenAllocation, {
 } from '../useSafeTokenAllocation'
 import * as web3 from '../wallets/web3'
 import * as useSafeInfoHook from '@/hooks/useSafeInfo'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 
 const setupFetchStub =
   (data: any, status: number = 200) =>

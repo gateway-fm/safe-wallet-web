@@ -1,14 +1,14 @@
 import { _isL2 } from '@/services/contracts/deployments'
 import { getSafeProvider } from '@/services/tx/tx-sender/sdk'
-import { type GetContractProps, SafeProvider } from '@safe-global/protocol-kit'
+import { type GetContractProps, SafeProvider } from '@gateway-fm/protocol-kit'
 import {
   getCompatibilityFallbackHandlerContractInstance,
   getMultiSendCallOnlyContractInstance,
   getSafeContractInstance,
   getSafeProxyFactoryContractInstance,
   getSignMessageLibContractInstance,
-} from '@safe-global/protocol-kit'
-import type SafeBaseContract from '@safe-global/protocol-kit'
+} from '@gateway-fm/protocol-kit'
+import type SafeBaseContract from '@gateway-fm/protocol-kit'
 import { type ChainInfo, ImplementationVersionState } from '@safe-global/safe-gateway-typescript-sdk'
 import type { SafeInfo } from '@safe-global/safe-gateway-typescript-sdk'
 import type { SafeVersion } from '@safe-global/safe-core-sdk-types'

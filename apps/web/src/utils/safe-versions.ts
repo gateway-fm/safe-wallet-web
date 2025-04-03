@@ -1,7 +1,7 @@
 import {
   hasSafeFeature as sdkHasSafeFeature,
   type SAFE_FEATURES,
-} from '@safe-global/protocol-kit'
+} from '@gateway-fm/protocol-kit'
 import type { SafeInfo } from '@safe-global/safe-gateway-typescript-sdk'
 
 // Note: backend returns `SafeInfo['version']` as `null` for unsupported contracts

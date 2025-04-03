@@ -1,10 +1,10 @@
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 import { solidityPacked, concat } from 'ethers'
 import { OperationType } from '@safe-global/safe-core-sdk-types'
 import type { SafeTransaction } from '@safe-global/safe-core-sdk-types'
 
 import { ERC20__factory, ERC721__factory, Multi_send__factory } from '@/types/contracts'
-import { EthSafeTransaction } from '@safe-global/protocol-kit'
+import { EthSafeTransaction } from '@gateway-fm/protocol-kit'
 import type { TransactionDetails } from '@safe-global/safe-gateway-typescript-sdk'
 import { TransactionStatus } from '@safe-global/safe-apps-sdk'
 

@@ -1,4 +1,4 @@
-import Safe from '@safe-global/protocol-kit'
+import type Safe from '@gateway-fm/protocol-kit'
 
 export async function createSafes(safeConfigurations) {
   const safes = []

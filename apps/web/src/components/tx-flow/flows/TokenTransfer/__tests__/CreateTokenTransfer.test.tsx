@@ -4,7 +4,7 @@ import * as tokenUtils from '@/components/tx-flow/flows/TokenTransfer/utils'
 import * as useHasPermission from '@/permissions/hooks/useHasPermission'
 import { Permission } from '@/permissions/config'
 import { render } from '@/tests/test-utils'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 import { TokenType } from '@safe-global/safe-gateway-typescript-sdk'
 
 describe('CreateTokenTransfer', () => {

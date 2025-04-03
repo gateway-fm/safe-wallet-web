@@ -1,5 +1,5 @@
 import type { SafeTransaction } from '@safe-global/safe-core-sdk-types'
-import { generatePreValidatedSignature } from '@safe-global/protocol-kit'
+import { generatePreValidatedSignature } from '@gateway-fm/protocol-kit'
 
 export const encodeSignatures = (
   safeTx: SafeTransaction,

@@ -1,4 +1,4 @@
-import { networks } from '@safe-global/protocol-kit'
+import { networks } from '@gateway-fm/protocol-kit'
 
 /**
  * A static shortName<->chainId dictionary

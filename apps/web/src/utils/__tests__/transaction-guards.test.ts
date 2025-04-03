@@ -8,7 +8,7 @@ import {
 import { faker } from '@faker-js/faker'
 import { Safe__factory } from '@/types/contracts'
 import { TransactionInfoType, TransactionTokenType, TransferDirection } from '@safe-global/safe-gateway-typescript-sdk'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 
 describe('transaction-guards', () => {
   describe('isOnChainConfirmationTxData', () => {
