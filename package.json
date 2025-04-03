@@ -15,7 +15,7 @@
     "prettier:fix": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\""
   },
   "resolutions": {
-    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.3-dev.2",
+    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.3",
     "@safe-global/api-kit": "npm:@gateway-fm/api-kit@latest",
     "@safe-global/relay-kit": "npm:@gateway-fm/relay-kit@latest",
     "@safe-global/sdk-starter-kit": "npm:@gateway-fm/sdk-starter-kit@latest",
