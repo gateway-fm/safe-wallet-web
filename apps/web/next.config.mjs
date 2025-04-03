@@ -32,10 +32,6 @@ const nextConfig = {
     unoptimized: true,
   },
 
-  babel: {
-    babelrc: true,
-  },
-
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   reactStrictMode: false,
   productionBrowserSourceMaps: true,
