@@ -46,6 +46,8 @@ This will install the required version of yarn and resolve all dependencies.
 
 ### Initial setup
 
+Before installing packages, you must configure access to the private NPM registry
+
 1. Clone the repository:
 
 ```bash
@@ -53,7 +55,17 @@ git clone <repo-url>
 cd monorepo
 ```
 
-2. Install dependencies:
+2. Generate a **classic** Personal Access Token (PAT) in [GitHub](https://github.com/settings/personal-access-tokens) with the following scope:
+
+`read:packages`
+
+3. Then set the token as an environment variable:
+
+```bash
+export NPM_TOKEN=your_generated_token
+```
+
+4. Install dependencies:
 
 ```bash
 yarn install
