@@ -12,7 +12,7 @@ import { Safe__factory, Safe_proxy_factory__factory } from '@/types/contracts'
 import { type JsonRpcProvider } from 'ethers'
 import { Multi_send__factory } from '@/types/contracts/factories/@safe-global/safe-deployments/dist/assets/v1.3.0'
 import { type ChainInfo } from '@safe-global/safe-gateway-typescript-sdk'
-import { EMPTY_DATA, ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { EMPTY_DATA, ZERO_ADDRESS } from '@safe-global/protocol-kit'
 import { getSafeSingletonDeployment, getSafeToL2SetupDeployment } from '@safe-global/safe-deployments'
 
 const setupToL2Address = getSafeToL2SetupDeployment({ version: '1.4.1' })?.defaultAddress!

@@ -8,17 +8,17 @@ import useSafeTokenAllocation, {
 } from '../useSafeTokenAllocation'
 import * as web3 from '../wallets/web3'
 import * as useSafeInfoHook from '@/hooks/useSafeInfo'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
 
 const setupFetchStub =
   (data: any, status: number = 200) =>
-  () => {
-    return Promise.resolve({
-      json: () => Promise.resolve(data),
-      status,
-      ok: status === 200,
-    })
-  }
+    () => {
+      return Promise.resolve({
+        json: () => Promise.resolve(data),
+        status,
+        ok: status === 200,
+      })
+    }
 
 describe('_getRedeemDeadline', () => {
   const mockProvider = {

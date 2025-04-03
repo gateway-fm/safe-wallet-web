@@ -4,7 +4,7 @@ import useTxStepper from '../../useTxStepper'
 import CreateTokenTransfer from './CreateTokenTransfer'
 import ReviewTokenTx from '@/components/tx-flow/flows/TokenTransfer/ReviewTokenTx'
 import AssetsIcon from '@/public/images/sidebar/assets.svg'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
 import { TokenAmountFields } from '@/components/common/TokenAmountInput'
 import { ConfirmTxDetails } from '@/components/tx/ConfirmTxDetails'
 import { useMemo } from 'react'
@@ -61,9 +61,9 @@ const TokenTransferFlow = ({ txNonce, ...params }: MultiTokenTransferFlowProps) 
       ...defaultParams,
       recipients: params.recipients
         ? params.recipients.map((recipient) => ({
-            ...defaultParams.recipients[0],
-            ...recipient,
-          }))
+          ...defaultParams.recipients[0],
+          ...recipient,
+        }))
         : defaultParams.recipients,
     },
     TxFlowType.TOKEN_TRANSFER,
@@ -88,7 +88,7 @@ const TokenTransferFlow = ({ txNonce, ...params }: MultiTokenTransferFlowProps) 
       },
       {
         txLayoutProps: { title: 'Confirm transaction details', fixedNonce: true },
-        content: <ConfirmTxDetails key={2} onSubmit={() => {}} isMassPayout={data.recipients.length > 1} />,
+        content: <ConfirmTxDetails key={2} onSubmit={() => { }} isMassPayout={data.recipients.length > 1} />,
       },
     ],
     [nextStep, data, txNonce],

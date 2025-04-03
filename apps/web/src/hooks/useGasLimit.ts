@@ -12,11 +12,11 @@ import { useSafeSDK } from './coreSDK/safeCoreSDK'
 import useIsSafeOwner from './useIsSafeOwner'
 import { Errors, logError } from '@/services/exceptions'
 import useSafeInfo from './useSafeInfo'
-import { estimateTxBaseGas } from '@safe-global/protocol-kit/dist/src/utils/transactions/gas'
+import { estimateTxBaseGas } from '@safe-global/protocol-kit'
 import {
   getCompatibilityFallbackHandlerContract,
   getSimulateTxAccessorContract,
-} from '@safe-global/protocol-kit/dist/src/contracts/safeDeploymentContracts'
+} from '@safe-global/protocol-kit'
 import { type JsonRpcProvider } from 'ethers'
 import { type ExtendedSafeInfo } from '@/store/safeInfoSlice'
 

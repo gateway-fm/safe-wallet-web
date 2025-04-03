@@ -5,7 +5,7 @@ import { FEATURES } from '@/utils/chains'
 import { getReadOnlyMultiSendCallOnlyContract } from '@/services/contracts/safeContracts'
 import { useCurrentChain } from '@/hooks/useChains'
 import useSafeInfo from '@/hooks/useSafeInfo'
-import { encodeMultiSendData } from '@safe-global/protocol-kit/dist/src/utils/transactions/utils'
+import { encodeMultiSendData } from '@safe-global/protocol-kit'
 import { useState, useMemo, useContext } from 'react'
 import type { SyntheticEvent } from 'react'
 import ErrorMessage from '@/components/tx/ErrorMessage'
@@ -73,9 +73,9 @@ export const ReviewBatch = ({ params }: { params: ExecuteBatchFlowProps }) => {
   } = useGetMultipleTransactionDetailsQuery(
     chain?.chainId && params.txs.length
       ? {
-          chainId: chain.chainId,
-          txIds: params.txs.map((tx) => tx.transaction.id),
-        }
+        chainId: chain.chainId,
+        txIds: params.txs.map((tx) => tx.transaction.id),
+      }
       : skipToken,
   )
 

@@ -3,7 +3,7 @@ import { UNLIMITED_APPROVAL_AMOUNT } from '@/utils/tokens'
 import type { BaseTransaction } from '@safe-global/safe-apps-sdk'
 import type { DecodedDataResponse } from '@safe-global/safe-gateway-typescript-sdk'
 import { parseUnits, id } from 'ethers'
-import { EMPTY_DATA } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { EMPTY_DATA } from '@safe-global/protocol-kit'
 import { type ApprovalInfo } from '../hooks/useApprovalInfos'
 
 export const APPROVAL_SIGNATURE_HASH = id('approve(address,uint256)').slice(0, 10)
@@ -47,10 +47,10 @@ export const extractTxs: (txs: BaseTransaction[] | (DecodedDataResponse & { to: 
     if (txParam.name === TRANSACTIONS_PARAM) {
       return txParam.valueDecoded
         ? txParam.valueDecoded.map((innerTx) => ({
-            to: innerTx.to,
-            data: innerTx.data || EMPTY_DATA,
-            value: innerTx.value,
-          }))
+          to: innerTx.to,
+          data: innerTx.data || EMPTY_DATA,
+          value: innerTx.value,
+        }))
         : []
     }
   }

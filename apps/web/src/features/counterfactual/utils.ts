@@ -19,7 +19,7 @@ import { defaultSafeInfo } from '@/store/safeInfoSlice'
 import { didRevert, type EthersError } from '@/utils/ethers-utils'
 import { assertProvider, assertTx, assertWallet } from '@/utils/helpers'
 import { type DeploySafeProps, type PredictedSafeProps } from '@safe-global/protocol-kit'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
 import type { SafeTransaction, SafeVersion, TransactionOptions } from '@safe-global/safe-core-sdk-types'
 import {
   type ChainInfo,
@@ -338,12 +338,12 @@ export const extractCounterfactualSafeSetup = (
   chainId: string | undefined,
 ):
   | {
-      owners: string[]
-      threshold: number
-      fallbackHandler: string | undefined
-      safeVersion: SafeVersion | undefined
-      saltNonce: string | undefined
-    }
+    owners: string[]
+    threshold: number
+    fallbackHandler: string | undefined
+    safeVersion: SafeVersion | undefined
+    saltNonce: string | undefined
+  }
   | undefined => {
   if (!undeployedSafe || !chainId || !undeployedSafe.props.safeAccountConfig) {
     return undefined

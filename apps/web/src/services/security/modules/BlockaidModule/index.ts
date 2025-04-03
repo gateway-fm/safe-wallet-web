@@ -1,7 +1,7 @@
 import { isEIP712TypedData } from '@/utils/safe-messages'
 import { normalizeTypedData } from '@/utils/web3'
 import { type SafeTransaction } from '@safe-global/safe-core-sdk-types'
-import { generateTypedData } from '@safe-global/protocol-kit/dist/src/utils/eip-712'
+import { generateTypedData } from '@safe-global/protocol-kit'
 import type { EIP712TypedData } from '@safe-global/safe-gateway-typescript-sdk'
 import { type SecurityResponse, type SecurityModule, SecuritySeverity } from '../types'
 import type {
@@ -49,12 +49,12 @@ type BlockaidPayload = {
   chain: string
   account_address: string
   metadata:
-    | {
-        domain: string
-      }
-    | {
-        non_dapp: true
-      }
+  | {
+    domain: string
+  }
+  | {
+    non_dapp: true
+  }
   data: {
     method: 'eth_signTypedData_v4'
     params: [string, string]
@@ -102,11 +102,11 @@ export class BlockaidModule implements SecurityModule<BlockaidModuleRequest, Blo
       options: ['simulation', 'validation'],
       metadata: request.origin
         ? {
-            domain: request.origin,
-          }
+          domain: request.origin,
+        }
         : {
-            non_dapp: true,
-          },
+          non_dapp: true,
+        },
     }
     const res = await fetch(`${BLOCKAID_API}/v0/evm/json-rpc/scan`, {
       method: 'POST',

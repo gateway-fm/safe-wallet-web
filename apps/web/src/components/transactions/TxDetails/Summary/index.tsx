@@ -11,7 +11,7 @@ import css from './styles.module.css'
 import DecodedData from '../TxData/DecodedData'
 import { SafeTxHashDataRow } from './SafeTxHashDataRow'
 import { Divider } from '@/components/tx/DecodedTx'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
 
 interface Props {
   safeTxData?: SafeTransactionData
@@ -37,7 +37,7 @@ const Summary = ({
 
   let confirmations, baseGas, gasPrice, gasToken, safeTxGas, refundReceiver, submittedAt, nonce
   if (txDetails && isMultisigDetailedExecutionInfo(txDetails.detailedExecutionInfo)) {
-    ;({ confirmations, baseGas, gasPrice, gasToken, safeTxGas, nonce } = txDetails.detailedExecutionInfo)
+    ; ({ confirmations, baseGas, gasPrice, gasToken, safeTxGas, nonce } = txDetails.detailedExecutionInfo)
     refundReceiver = txDetails.detailedExecutionInfo.refundReceiver?.value
   }
 

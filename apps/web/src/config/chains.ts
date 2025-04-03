@@ -1,4 +1,4 @@
-import { networks } from '@safe-global/protocol-kit/dist/src/utils/eip-3770/config'
+import { networks } from '@safe-global/protocol-kit'
 
 /**
  * A static shortName<->chainId dictionary

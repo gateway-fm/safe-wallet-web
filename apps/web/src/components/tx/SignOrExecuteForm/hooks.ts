@@ -1,7 +1,7 @@
 import { assertTx, assertOnboard, assertChainInfo, assertProvider } from '@/utils/helpers'
 import { useMemo } from 'react'
 import { type TransactionOptions, type SafeTransaction } from '@safe-global/safe-core-sdk-types'
-import { sameString } from '@safe-global/protocol-kit/dist/src/utils'
+import { sameString } from '@safe-global/protocol-kit'
 import useSafeInfo from '@/hooks/useSafeInfo'
 import useWallet, { useSigner } from '@/hooks/wallets/useWallet'
 import useOnboard from '@/hooks/wallets/useOnboard'
@@ -204,11 +204,11 @@ export const useSafeTxGas = (safeTx: SafeTransaction | undefined): string | unde
     return !safeTx?.data?.to
       ? undefined
       : {
-          to: safeTx?.data.to,
-          value: safeTx?.data?.value,
-          data: safeTx?.data?.data,
-          operation: safeTx?.data?.operation,
-        }
+        to: safeTx?.data.to,
+        value: safeTx?.data?.value,
+        data: safeTx?.data?.data,
+        operation: safeTx?.data?.operation,
+      }
   }, [safeTx?.data.to, safeTx?.data.value, safeTx?.data.data, safeTx?.data.operation])
 
   const [safeTxGas] = useAsync(() => {

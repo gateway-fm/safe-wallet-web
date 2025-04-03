@@ -10,9 +10,9 @@ import { OperationType, type SafeTransaction } from '@safe-global/safe-core-sdk-
 import {
   getCompatibilityFallbackHandlerContract,
   getSimulateTxAccessorContract,
-} from '@safe-global/protocol-kit/dist/src/contracts/safeDeploymentContracts'
+} from '@safe-global/protocol-kit'
 
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
 
 type DeployGasLimitProps = {
   safeTxGas: bigint

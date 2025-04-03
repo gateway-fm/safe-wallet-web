@@ -5,14 +5,14 @@ import * as useWallet from '@/hooks/wallets/useWallet'
 import * as sdk from '@/services/tx/tx-sender/sdk'
 import { safeTxBuilder } from '@/tests/builders/safeTx'
 import * as protocolKit from '@safe-global/protocol-kit'
-import * as protocolKitContracts from '@safe-global/protocol-kit/dist/src/contracts/safeDeploymentContracts'
+import * as protocolKitContracts from '@safe-global/protocol-kit'
 import type Safe from '@safe-global/protocol-kit'
 
 import { renderHook } from '@/tests/test-utils'
 import type {
   CompatibilityFallbackHandlerContractImplementationType,
   SimulateTxAccessorContractImplementationType,
-} from '@safe-global/protocol-kit/dist/src/types'
+} from '@safe-global/protocol-kit'
 import { waitFor } from '@testing-library/react'
 import type { OnboardAPI } from '@web3-onboard/core'
 import { faker } from '@faker-js/faker'

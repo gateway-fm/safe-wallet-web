@@ -4,7 +4,7 @@ import useTxStepper from '../../useTxStepper'
 import { CreateSpendingLimit } from './CreateSpendingLimit'
 import { ReviewSpendingLimit } from './ReviewSpendingLimit'
 import SaveAddressIcon from '@/public/images/common/save-address.svg'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@safe-global/protocol-kit'
 import { TokenAmountFields } from '@/components/common/TokenAmountInput'
 import { useMemo } from 'react'
 import { ConfirmTxDetails } from '@/components/tx/ConfirmTxDetails'
@@ -51,7 +51,7 @@ const NewSpendingLimitFlow = () => {
       },
       {
         txLayoutProps: { title: 'Confirm transaction details', fixedNonce: true },
-        content: <ConfirmTxDetails key={2} onSubmit={() => {}} />,
+        content: <ConfirmTxDetails key={2} onSubmit={() => { }} />,
       },
     ],
     [nextStep, data],

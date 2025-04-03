@@ -7,8 +7,8 @@ import {
   getSafeContractInstance,
   getSafeProxyFactoryContractInstance,
   getSignMessageLibContractInstance,
-} from '@safe-global/protocol-kit/dist/src/contracts/contractInstances'
-import type SafeBaseContract from '@safe-global/protocol-kit/dist/src/contracts/Safe/SafeBaseContract'
+} from '@safe-global/protocol-kit'
+import type SafeBaseContract from '@safe-global/protocol-kit'
 import { type ChainInfo, ImplementationVersionState } from '@safe-global/safe-gateway-typescript-sdk'
 import type { SafeInfo } from '@safe-global/safe-gateway-typescript-sdk'
 import type { SafeVersion } from '@safe-global/safe-core-sdk-types'
@@ -151,7 +151,7 @@ export const isMigrationToL2Possible = (safe: SafeInfo): boolean => {
     safe.nonce === 0 &&
     Boolean(
       getSafeMigrationDeployment({ network: safe.chainId, version: SAFE_TO_L2_MIGRATION_VERSION })?.networkAddresses[
-        safe.chainId
+      safe.chainId
       ],
     )
   )
