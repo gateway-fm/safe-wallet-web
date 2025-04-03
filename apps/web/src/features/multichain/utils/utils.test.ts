@@ -367,7 +367,7 @@ describe('multiChain/utils', () => {
                   type: PayMethod.PayLater,
                 },
               },
-            },
+            } as any, // TODO: FIXME: fix this
             ['100']: {
               [address]: {
                 props: {
@@ -381,7 +381,7 @@ describe('multiChain/utils', () => {
                   type: PayMethod.PayLater,
                 },
               },
-            },
+            } as any, // TODO: FIXME: fix this
           },
         ),
       ).toEqual([
@@ -451,7 +451,7 @@ describe('multiChain/utils', () => {
                   type: PayMethod.PayLater,
                 },
               },
-            },
+            } as any, // TODO: FIXME: fix this
           },
         ),
       ).toEqual([
@@ -513,7 +513,7 @@ describe('multiChain/utils', () => {
                   type: PayMethod.PayLater,
                 },
               },
-            },
+            } as any, // TODO: FIXME: fix this
           },
         ),
       ).toEqual([

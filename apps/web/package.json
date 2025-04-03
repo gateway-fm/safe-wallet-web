@@ -10,6 +10,7 @@
     "build": "next build",
     "lint": "tsc && next lint",
     "lint:fix": "next lint --fix",
+    "tsc": "tsc --noEmit",
     "prettier": "prettier -w \"{src,cypress,mocks,scripts}/**/*.{ts,tsx,css,js}\"",
     "fix": "yarn lint:fix && ts-prune && yarn prettier",
     "test": "cross-env TZ=CET DEBUG_PRINT_LIMIT=30000 jest",
@@ -43,6 +44,8 @@
     "@emotion/react": "^11.13.5",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.13.5",
+    "@ethersproject/strings": "^5.8.0",
+    "@gateway-fm/protocol-kit": "6.0.3",
     "@gnosis.pm/zodiac": "^4.0.3",
     "@mui/icons-material": "^6.1.6",
     "@mui/material": "^6.3.0",
@@ -51,7 +54,6 @@
     "@reduxjs/toolkit": "^2.5.0",
     "@reown/walletkit": "^1.2.1",
     "@safe-global/api-kit": "^2.4.6",
-    "@safe-global/protocol-kit": "^4.1.5",
     "@safe-global/safe-apps-sdk": "^9.1.0",
     "@safe-global/safe-client-gateway-sdk": "v1.60.1",
     "@safe-global/safe-deployments": "^1.37.28",
@@ -129,6 +131,7 @@
     "@types/semver": "^7.3.10",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^8.18.1",
+    "babel-plugin-module-resolver": "^5.0.2",
     "cheerio": "^1.0.0",
     "cross-env": "^7.0.3",
     "cypress": "^13.15.2",
@@ -158,6 +161,13 @@
     "typechain": "^8.3.2",
     "typescript": "^5.4.5",
     "typescript-plugin-css-modules": "^4.2.2"
+  },
+  "resolutions": {
+    "@safe-global/api-kit": "npm:@gateway-fm/api-kit@latest",
+    "@safe-global/relay-kit": "npm:@gateway-fm/relay-kit@latest",
+    "@safe-global/sdk-starter-kit": "npm:@gateway-fm/sdk-starter-kit@latest",
+    "@safe-global/testing-kit": "npm:@gateway-fm/testing-kit@latest",
+    "@safe-global/types-kit": "npm:@gateway-fm/types-kit@latest"
   },
   "nextBundleAnalysis": {
     "budget": null,

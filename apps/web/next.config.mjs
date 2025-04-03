@@ -81,6 +81,13 @@ const nextConfig = {
       '@mui/material$': path.resolve('./src/components/common/Mui'),
       react: path.resolve('./node_modules/react'),
       'react-dom': path.resolve('./node_modules/react-dom'),
+      '@gateway-fm/protocol-kit': path.resolve('../../node_modules/@gateway-fm/protocol-kit'),
+      '@safe-global/protocol-kit': path.resolve('../../node_modules/@gateway-fm/protocol-kit'),
+      '@safe-global/api-kit': path.resolve('../../node_modules/@gateway-fm/api-kit'),
+      '@safe-global/relay-kit': path.resolve('../../node_modules/@gateway-fm/relay-kit'),
+      '@safe-global/sdk-starter-kit': path.resolve('../../node_modules/@gateway-fm/sdk-starter-kit'),
+      '@safe-global/testing-kit': path.resolve('../../node_modules/@gateway-fm/testing-kit'),
+      '@safe-global/types-kit': path.resolve('../../node_modules/@gateway-fm/types-kit'),
     }
 
     if (dev) {

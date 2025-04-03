@@ -49,7 +49,7 @@ import { AppRoutes } from '@/config/routes'
 import { type ReplayedSafeProps } from '@/store/slices'
 import { predictAddressBasedOnReplayData } from '@/features/multichain/utils/utils'
 import { createWeb3ReadOnly, getRpcServiceUrl } from '@/hooks/wallets/web3'
-import { type DeploySafeProps } from '@safe-global/protocol-kit'
+import { type DeploySafeProps } from '@gateway-fm/protocol-kit'
 import { updateAddressBook } from '../../logic/address-book'
 import chains from '@/config/chains'
 
@@ -244,7 +244,7 @@ const ReviewStep = ({ data, onSubmit, onBack, setStep }: StepRenderProps<NewSafe
         safeAddress = await computeNewSafeAddress(
           customRpcUrl || getRpcServiceUrl(chain.rpcUri),
           {
-            safeAccountConfig: replayedSafeWithNonce.safeAccountConfig,
+            safeAccountConfig: replayedSafeWithNonce.safeAccountConfig as any, // TODO: FIXME: fix this
             saltNonce: nextAvailableNonce,
           },
           chain,

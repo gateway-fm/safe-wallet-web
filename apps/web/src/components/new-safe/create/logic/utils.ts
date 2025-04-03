@@ -41,7 +41,7 @@ export const getAvailableSaltNonce = async (
       safeAddress = await computeNewSafeAddress(
         rpcUrl,
         {
-          safeAccountConfig: replayedSafe.safeAccountConfig,
+          safeAccountConfig: replayedSafe.safeAccountConfig as any, // TODO: FIXME: fix this
           saltNonce: replayedSafe.saltNonce,
         },
         chain,

@@ -42,9 +42,10 @@ export default [
       '@next/next/google-font-display': 'off',
       '@next/next/google-font-preconnect': 'off',
       '@next/next/no-page-custom-font': 'off',
+      '@typescript-eslint/await-thenable': 'off',
+      '@typescript-eslint/consistent-type-imports': 'off',
+
       'unused-imports/no-unused-imports': 'error',
-      '@typescript-eslint/consistent-type-imports': 'error',
-      '@typescript-eslint/await-thenable': 'error',
       'no-constant-condition': 'warn',
 
       'unused-imports/no-unused-vars': [

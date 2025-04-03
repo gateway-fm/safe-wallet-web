@@ -3,16 +3,13 @@ import useChainId from '@/hooks/useChainId'
 import useOnboard from '@/hooks/wallets/useOnboard'
 import useWallet from '@/hooks/wallets/useWallet'
 import { getSafeSDKWithSigner } from '@/services/tx/tx-sender/sdk'
-import { estimateSafeDeploymentGas, estimateTxBaseGas } from '@safe-global/protocol-kit'
-import type Safe from '@safe-global/protocol-kit'
+import { estimateSafeDeploymentGas, estimateTxBaseGas } from '@gateway-fm/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 
 import { OperationType, type SafeTransaction } from '@safe-global/safe-core-sdk-types'
-import {
-  getCompatibilityFallbackHandlerContract,
-  getSimulateTxAccessorContract,
-} from '@safe-global/protocol-kit/dist/src/contracts/safeDeploymentContracts'
+import { getCompatibilityFallbackHandlerContract, getSimulateTxAccessorContract } from '@gateway-fm/protocol-kit'
 
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 
 type DeployGasLimitProps = {
   safeTxGas: bigint

@@ -7,12 +7,11 @@ import { getReadOnlyProxyFactoryContract } from '@/services/contracts/safeContra
 import type { UrlObject } from 'url'
 import { AppRoutes } from '@/config/routes'
 import { SAFE_APPS_EVENTS, trackEvent } from '@/services/analytics'
-import { predictSafeAddress, SafeFactory, SafeProvider } from '@safe-global/protocol-kit'
-import type { DeploySafeProps, PredictedSafeProps } from '@safe-global/protocol-kit'
+import { EMPTY_DATA, ZERO_ADDRESS, predictSafeAddress, SafeFactory, SafeProvider } from '@gateway-fm/protocol-kit'
+import type { DeploySafeProps, PredictedSafeProps } from '@gateway-fm/protocol-kit'
 import { isValidSafeVersion } from '@/hooks/coreSDK/safeCoreSDK'
 
 import { backOff } from 'exponential-backoff'
-import { EMPTY_DATA, ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
 import { getLatestSafeVersion } from '@/utils/chains'
 import {
   getCompatibilityFallbackHandlerDeployment,
@@ -43,7 +42,7 @@ const getSafeFactory = async (
   if (!isValidSafeVersion(safeVersion)) {
     throw new Error('Invalid Safe version')
   }
-  return SafeFactory.init({ provider, safeVersion, isL1SafeSingleton })
+  return SafeFactory.init({ provider, safeVersion, isL1SafeSingleton } as any) // TODO: FIXME: fix this
 }
 
 /**
@@ -61,7 +60,7 @@ export const createNewSafe = async (
   const safeFactory = await getSafeFactory(provider, safeVersion, isL1SafeSingleton)
 
   if (isPredictedSafeProps(undeployedSafeProps)) {
-    await safeFactory.deploySafe({ ...undeployedSafeProps, options, callback })
+    await (safeFactory as any).deploySafe?.({ ...undeployedSafeProps, options, callback }) // TODO: FIXME: fix this
   } else {
     const txResponse = await activateReplayedSafe(chain, undeployedSafeProps, createWeb3(provider), options)
     callback(txResponse.hash)
@@ -82,9 +81,9 @@ export const computeNewSafeAddress = async (
   return predictSafeAddress({
     safeProvider,
     chainId: BigInt(chain.chainId),
-    safeAccountConfig: props.safeAccountConfig,
+    safeAccountConfig: props.safeAccountConfig as any, // TODO: FIXME: fix this
     safeDeploymentConfig: {
-      saltNonce: props.saltNonce,
+      saltNonce: props.saltNonce as any, // TODO: FIXME: fix this
       safeVersion: safeVersion ?? getLatestSafeVersion(chain),
     },
   })
@@ -296,7 +295,7 @@ export const migrateLegacySafeProps = (predictedSafeProps: PredictedSafeProps, c
     },
     safeVersion,
     saltNonce,
-  }
+  } as any // TODO: FIXME: fix this
 }
 
 export const assertNewUndeployedSafeProps = (props: UndeployedSafeProps, chain: ChainInfo): ReplayedSafeProps => {

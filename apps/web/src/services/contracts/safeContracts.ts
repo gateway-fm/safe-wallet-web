@@ -1,14 +1,14 @@
 import { _isL2 } from '@/services/contracts/deployments'
 import { getSafeProvider } from '@/services/tx/tx-sender/sdk'
-import { type GetContractProps, SafeProvider } from '@safe-global/protocol-kit'
+import { type GetContractProps, SafeProvider } from '@gateway-fm/protocol-kit'
 import {
   getCompatibilityFallbackHandlerContractInstance,
   getMultiSendCallOnlyContractInstance,
   getSafeContractInstance,
   getSafeProxyFactoryContractInstance,
   getSignMessageLibContractInstance,
-} from '@safe-global/protocol-kit/dist/src/contracts/contractInstances'
-import type SafeBaseContract from '@safe-global/protocol-kit/dist/src/contracts/Safe/SafeBaseContract'
+} from '@gateway-fm/protocol-kit'
+import SafeBaseContract from '@gateway-fm/protocol-kit'
 import { type ChainInfo, ImplementationVersionState } from '@safe-global/safe-gateway-typescript-sdk'
 import type { SafeInfo } from '@safe-global/safe-gateway-typescript-sdk'
 import type { SafeVersion } from '@safe-global/safe-core-sdk-types'
@@ -49,7 +49,7 @@ const getGnosisSafeContract = async (safe: SafeInfo, safeProvider: SafeProvider)
   )
 }
 
-export const getReadOnlyCurrentGnosisSafeContract = async (safe: SafeInfo): Promise<SafeBaseContract<any>> => {
+export const getReadOnlyCurrentGnosisSafeContract = async (safe: SafeInfo): Promise<SafeBaseContract> => {
   const safeSDK = getSafeSDK()
   if (!safeSDK) {
     throw new Error('Safe SDK not found.')
@@ -57,7 +57,7 @@ export const getReadOnlyCurrentGnosisSafeContract = async (safe: SafeInfo): Prom
 
   const safeProvider = safeSDK.getSafeProvider()
 
-  return getGnosisSafeContract(safe, safeProvider)
+  return getGnosisSafeContract(safe, safeProvider) as any // TODO: FIXME: fix this
 }
 
 export const getCurrentGnosisSafeContract = async (safe: SafeInfo, provider: string) => {
@@ -117,8 +117,8 @@ export const getReadOnlyProxyFactoryContract = async (safeVersion: SafeInfo['ver
   return getSafeProxyFactoryContractInstance(
     _getValidatedGetContractProps(safeVersion).safeVersion,
     safeProvider,
-    safeProvider.getExternalProvider(),
-    contractAddress,
+    safeProvider.getExternalProvider() as any, // TODO: FIXME: fix this
+    contractAddress as any, // TODO: FIXME: fix this
   )
 }
 

@@ -17,7 +17,8 @@ jobs:
 
     env:
       ARCHIVE_NAME: ${{ github.event.repository.name }}-${{ github.event.release.tag_name }}
-
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      
     steps:
       - uses: actions/checkout@v4
 

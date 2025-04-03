@@ -8,9 +8,8 @@ import {
 } from '@/components/tx/security/tenderly/utils'
 import * as safeContracts from '@/services/contracts/safeContracts'
 import { getMultiSendCallOnlyDeployment, getSafeSingletonDeployment } from '@safe-global/safe-deployments'
-import EthSafeTransaction from '@safe-global/protocol-kit/dist/src/utils/transactions/SafeTransaction'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
-import { generatePreValidatedSignature } from '@safe-global/protocol-kit/dist/src/utils/signatures'
+import { EthSafeTransaction, ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
+import { generatePreValidatedSignature } from '@gateway-fm/protocol-kit'
 import { toBeHex } from 'ethers'
 import * as Web3 from '@/hooks/wallets/web3'
 

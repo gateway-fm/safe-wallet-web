@@ -2,8 +2,8 @@ import { getCounterfactualBalance, getUndeployedSafeInfo } from '@/features/coun
 import * as web3 from '@/hooks/wallets/web3'
 import { chainBuilder } from '@/tests/builders/chains'
 import { faker } from '@faker-js/faker'
-import type { PredictedSafeProps } from '@safe-global/protocol-kit'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import type { PredictedSafeProps } from '@gateway-fm/protocol-kit'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 import { TokenType } from '@safe-global/safe-gateway-typescript-sdk'
 import { type BrowserProvider, type JsonRpcProvider } from 'ethers'
 import { PendingSafeStatus } from '../store/undeployedSafesSlice'
@@ -17,7 +17,7 @@ describe('Counterfactual utils', () => {
           owners: [faker.finance.ethereumAddress()],
           threshold: 1,
         },
-        safeDeploymentConfig: {},
+        safeDeploymentConfig: {} as any, // TODO: FIXME: fix this
       }
       const mockAddress = faker.finance.ethereumAddress()
       const mockChainId = '1'

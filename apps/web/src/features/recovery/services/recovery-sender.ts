@@ -24,7 +24,9 @@ async function getDelayModifierContract({
   const isSmartContract = await isSmartContractWallet(chainId, signerAddress)
 
   const signer = await getUncheckedSigner(provider)
-  const delayModifier = getModuleInstance(KnownContracts.DELAY, delayModifierAddress, signer).connect(signer)
+  const delayModifier = getModuleInstance(KnownContracts.DELAY, delayModifierAddress, signer as any).connect(
+    signer as any,
+  ) // TODO: FIXME: fix this
 
   return {
     isUnchecked: isSmartContract,
@@ -121,7 +123,7 @@ export async function dispatchRecoveryProposal({
         moduleAddress: delayModifierAddress,
         recoveryTxHash,
         txType,
-        tx,
+        tx: tx as any, // TODO: FIXME: fix this
       })
     }
   } catch (error) {
@@ -173,7 +175,7 @@ export async function dispatchRecoveryExecution({
         moduleAddress: delayModifierAddress,
         recoveryTxHash: args.txHash,
         txType,
-        tx,
+        tx: tx as any, // TODO: FIXME: fix this
       })
     }
   } catch (error) {
@@ -225,7 +227,7 @@ export async function dispatchRecoverySkipExpired({
         moduleAddress: delayModifierAddress,
         recoveryTxHash,
         txType,
-        tx,
+        tx: tx as any, // TODO: FIXME: fix this
       })
     }
   } catch (error) {

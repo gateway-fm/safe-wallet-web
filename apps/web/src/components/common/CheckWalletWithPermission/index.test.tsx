@@ -7,7 +7,7 @@ import { chainBuilder } from '@/tests/builders/chains'
 import { faker } from '@faker-js/faker'
 import { extendedSafeInfoBuilder } from '@/tests/builders/safe'
 import useSafeInfo from '@/hooks/useSafeInfo'
-import type Safe from '@safe-global/protocol-kit'
+import type Safe from '@gateway-fm/protocol-kit'
 import * as useHasPermission from '@/permissions/hooks/useHasPermission'
 import { Permission } from '@/permissions/config'
 

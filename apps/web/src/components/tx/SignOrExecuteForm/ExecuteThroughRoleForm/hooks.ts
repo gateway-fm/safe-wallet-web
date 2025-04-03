@@ -25,9 +25,9 @@ import { KnownContracts, getModuleInstance } from '@gnosis.pm/zodiac'
 import useWallet from '@/hooks/wallets/useWallet'
 import { useHasFeature } from '@/hooks/useChains'
 import { FEATURES } from '@/utils/chains'
-import { encodeMultiSendData } from '@safe-global/protocol-kit'
+import { encodeMultiSendData } from '@gateway-fm/protocol-kit'
 import { Multi_send__factory } from '@/types/contracts'
-import { decodeMultiSendData } from '@safe-global/protocol-kit/dist/src/utils'
+import { decodeMultiSendData } from '@gateway-fm/protocol-kit'
 
 const ROLES_V2_SUPPORTED_CHAINS = Object.keys(chains)
 const multiSendInterface = Multi_send__factory.createInterface()
@@ -266,8 +266,7 @@ const encodeExecuteThroughRole = (
   provider: JsonRpcProvider,
 ): Transaction => {
   const combinedMetaTx = encodeMetaTransactions(role, metaTransactions)
-
-  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider)
+  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider as any) //TODO: FIXME: fix this
   const data = rolesModifier.interface.encodeFunctionData('execTransactionWithRole', [
     combinedMetaTx.to,
     BigInt(combinedMetaTx.value),
@@ -293,7 +292,7 @@ const checkCondition = async (
 ) => {
   const combinedMetaTx = encodeMetaTransactions(role, metaTransactions)
 
-  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider)
+  const rolesModifier = getModuleInstance(KnownContracts.ROLES_V2, role.modAddress, provider as any) // TODO: FIXME: fix this
   try {
     await rolesModifier.execTransactionWithRole.estimateGas(
       combinedMetaTx.to,

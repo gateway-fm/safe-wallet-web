@@ -17,6 +17,8 @@ jobs:
       fail-fast: false
       matrix:
         containers: [1]
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 

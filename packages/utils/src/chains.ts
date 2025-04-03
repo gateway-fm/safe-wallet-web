@@ -37,7 +37,6 @@ export enum FEATURES {
   TARGETED_MASS_PAYOUTS = 'TARGETED_MASS_PAYOUTS',
 }
 
-
 export const hasFeature = (chain: ChainInfo, feature: FEATURES): boolean => {
   return (chain.features as string[]).includes(feature)
 }

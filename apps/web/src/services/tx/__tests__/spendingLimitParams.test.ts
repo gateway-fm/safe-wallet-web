@@ -1,10 +1,10 @@
 import type { NewSpendingLimitFlowProps } from '@/components/tx-flow/flows/NewSpendingLimit'
 import { chainBuilder } from '@/tests/builders/chains'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 import * as safeCoreSDK from '@/hooks/coreSDK/safeCoreSDK'
 import * as txSender from '@/services/tx/tx-sender/create'
 import * as spendingLimitParams from '@/services/tx/spendingLimitParams'
-import type Safe from '@safe-global/protocol-kit'
+import Safe from '@gateway-fm/protocol-kit'
 import type { SpendingLimitState } from '@/store/spendingLimitsSlice'
 import { createNewSpendingLimitTx } from '@/services/tx/tx-sender'
 

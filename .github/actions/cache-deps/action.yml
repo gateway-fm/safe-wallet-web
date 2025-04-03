@@ -24,6 +24,8 @@ outputs:
 
 runs:
   using: "composite"
+  env:
+    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   steps:
     - name: Restore Yarn Cache
       if: ${{ inputs.mode == 'restore-yarn' }}

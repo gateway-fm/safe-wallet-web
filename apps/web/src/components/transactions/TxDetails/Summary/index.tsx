@@ -11,7 +11,7 @@ import css from './styles.module.css'
 import DecodedData from '../TxData/DecodedData'
 import { SafeTxHashDataRow } from './SafeTxHashDataRow'
 import { Divider } from '@/components/tx/DecodedTx'
-import { ZERO_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { ZERO_ADDRESS } from '@gateway-fm/protocol-kit'
 
 interface Props {
   safeTxData?: SafeTransactionData

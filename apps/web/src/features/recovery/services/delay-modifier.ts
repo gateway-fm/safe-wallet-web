@@ -1,5 +1,5 @@
 import { ContractVersions, getModuleInstance, KnownContracts } from '@gnosis.pm/zodiac'
-import { SENTINEL_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { SENTINEL_ADDRESS } from '@gateway-fm/protocol-kit'
 import type { Delay, SupportedNetworks } from '@gnosis.pm/zodiac'
 import { type JsonRpcProvider, isAddress } from 'ethers'
 import type { SafeInfo } from '@safe-global/safe-gateway-typescript-sdk'
@@ -72,8 +72,8 @@ export async function getRecoveryDelayModifiers(
 
   const delayModifiers = await Promise.all(
     modules.map(async ({ value }) => {
-      const isDelayModifier = await isOfficialDelayModifier(chainId, value, provider)
-      return isDelayModifier && getModuleInstance(KnownContracts.DELAY, value, provider)
+      const isDelayModifier = await isOfficialDelayModifier(chainId, value, provider as any) // TODO: FIXME: fix this
+      return isDelayModifier && getModuleInstance(KnownContracts.DELAY, value, provider as any) // TODO: FIXME: fix this
     }),
   ).then((instances) => instances.filter(Boolean) as Array<Delay>)
 

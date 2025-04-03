@@ -26,10 +26,10 @@ export function useIsValidRecoveryExecTransactionFromModule(
     }
 
     const provider = getPatchedSignerProvider(wallet, safe.chainId, web3ReadOnly)
-    const delayModifier = getModuleInstance(KnownContracts.DELAY, delayModifierAddress, provider)
+    const delayModifier = getModuleInstance(KnownContracts.DELAY, delayModifierAddress, provider as any) // TODO: FIXME: fix this
 
     const signer = await provider.getSigner()
-    const contract = delayModifier.connect(signer)
+    const contract = delayModifier.connect(signer as any) // TODO: FIXME: fix this
 
     return contract.execTransactionFromModule.staticCall(
       safeTx.data.to,
@@ -52,10 +52,10 @@ export function useIsValidRecoveryExecuteNextTx(recovery: RecoveryQueueItem): As
     }
 
     const provider = getPatchedSignerProvider(wallet, safe.chainId, web3ReadOnly)
-    const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider)
+    const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider as any) // TODO: FIXME: fix this
 
     const signer = await provider.getSigner()
-    const contract = delayModifier.connect(signer)
+    const contract = delayModifier.connect(signer as any) // TODO: FIXME: fix this
 
     const { to, value, data, operation } = recovery.args
 
@@ -77,10 +77,10 @@ export function useIsValidRecoverySkipExpired(recovery: RecoveryQueueItem): Asyn
     }
 
     const provider = getPatchedSignerProvider(wallet, safe.chainId, web3ReadOnly)
-    const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider)
+    const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider as any) // TODO: FIXME: fix this
 
     const signer = await provider.getSigner()
-    const contract = delayModifier.connect(signer)
+    const contract = delayModifier.connect(signer as any) // TODO: FIXME: fix this
 
     await contract.skipExpired.staticCall()
 

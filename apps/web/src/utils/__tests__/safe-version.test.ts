@@ -1,4 +1,4 @@
-import { SAFE_FEATURES } from '@safe-global/protocol-kit/dist/src/utils/safeVersions'
+import { SAFE_FEATURES } from '@gateway-fm/protocol-kit'
 import { hasSafeFeature } from '../safe-versions'
 
 describe('safe-version', () => {

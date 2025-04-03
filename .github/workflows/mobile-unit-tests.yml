@@ -14,7 +14,8 @@ on:
 jobs:
   test-and-coverage:
     runs-on: ubuntu-latest
-
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       # Checkout the code
       - name: Checkout code

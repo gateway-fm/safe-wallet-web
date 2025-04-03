@@ -88,7 +88,7 @@ export const CreateSafeStatus = ({
       saltNonce: Number(pendingSafe.props.safeDeploymentConfig?.saltNonce),
       safeAddress,
       safeVersion: pendingSafe.props.safeDeploymentConfig?.safeVersion ?? getLatestSafeVersion(chain),
-    })
+    } as any) // TODO: FIXME: fix this
   }
 
   const onCancel = () => {

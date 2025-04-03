@@ -23,7 +23,7 @@ import { useAppSelector } from '@/store'
 import { hasFeature } from '@/utils/chains'
 import { hasRemainingRelays } from '@/utils/relaying'
 import { Box, Button, CircularProgress, Divider, Grid, Typography } from '@mui/material'
-import type { DeploySafeProps } from '@safe-global/protocol-kit'
+import type { DeploySafeProps } from '@gateway-fm/protocol-kit'
 import { FEATURES } from '@/utils/chains'
 import React, { useContext, useMemo, useState } from 'react'
 import { getLatestSafeVersion } from '@/utils/chains'
@@ -43,7 +43,7 @@ const useActivateAccount = (undeployedSafe: UndeployedSafe | undefined) => {
       ? undeployedSafe?.props.safeDeploymentConfig?.safeVersion
       : undeployedSafe?.props.safeVersion)
 
-  const { gasLimit } = useEstimateSafeCreationGas(undeployedSafe?.props, safeVersion)
+  const { gasLimit } = useEstimateSafeCreationGas(undeployedSafe?.props, safeVersion as any) // TODO: FIXME: fix this
 
   const isEIP1559 = chain && hasFeature(chain, FEATURES.EIP1559)
   const maxFeePerGas = gasPrice?.maxFeePerGas

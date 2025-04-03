@@ -13,6 +13,8 @@ jobs:
   tag-release:
     if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

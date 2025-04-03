@@ -1,6 +1,6 @@
 import { Interface } from 'ethers'
 import { getSafeSingletonDeployment } from '@safe-global/safe-deployments'
-import { SENTINEL_ADDRESS } from '@safe-global/protocol-kit/dist/src/utils/constants'
+import { SENTINEL_ADDRESS } from '@gateway-fm/protocol-kit'
 import { OperationType } from '@safe-global/safe-core-sdk-types'
 import { sameAddress } from '@/utils/addresses'
 import { getModuleInstance, KnownContracts } from '@gnosis.pm/zodiac'
@@ -104,7 +104,7 @@ export async function getRecoverySkipTransaction(
   recovery: RecoveryQueueItem,
   provider: Provider,
 ): Promise<MetaTransactionData> {
-  const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider)
+  const delayModifier = getModuleInstance(KnownContracts.DELAY, recovery.address, provider as any) // TODO: FIXME: fix this
 
   const newTxNonce = recovery.args.queueNonce + 1n
 
