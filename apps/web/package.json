@@ -160,7 +160,7 @@
     "typescript-plugin-css-modules": "^4.2.2"
   },
   "resolutions": {
-    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.9",
+    "@safe-global/protocol-kit": "npm:@gateway-fm/protocol-kit@6.0.3-dev.1",
     "@safe-global/api-kit": "npm:@gateway-fm/api-kit@latest",
     "@safe-global/relay-kit": "npm:@gateway-fm/relay-kit@latest",
     "@safe-global/sdk-starter-kit": "npm:@gateway-fm/sdk-starter-kit@latest",
