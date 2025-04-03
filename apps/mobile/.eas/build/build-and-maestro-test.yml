@@ -1,5 +1,7 @@
 build:
   name: Create a build and run Maestro tests on it
+  env:
+    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   steps:
     - eas/checkout
 

@@ -4,6 +4,8 @@ description: 'Install the dependencies'
 
 runs:
   using: 'composite'
+  env:
+    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   steps:
     # We require yarn v4 and installing through corepack is the easiest way to get it
     - uses: actions/checkout@v4

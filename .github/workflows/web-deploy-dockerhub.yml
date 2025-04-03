@@ -24,6 +24,8 @@ on:
 jobs:
   dockerhub-push:
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/dev' || (github.event_name == 'release' && github.event.action == 'released')
     steps:
       - uses: actions/checkout@v4

@@ -17,7 +17,8 @@ inputs:
 
 runs:
   using: 'composite'
-
+  env:
+    NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
   steps:
     - name: Restore Next.js Build Cache & Cypress cache
       id: restore-nc

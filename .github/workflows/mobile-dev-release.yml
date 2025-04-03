@@ -20,6 +20,8 @@ jobs:
        contains(github.event.pull_request.labels.*.name, 'mobile-dev-release'))
     name: Install and build
     runs-on: ubuntu-latest
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

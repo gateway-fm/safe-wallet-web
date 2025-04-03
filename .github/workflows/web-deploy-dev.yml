@@ -23,7 +23,8 @@ jobs:
       id-token: write
 
     name: Deploy to dev/staging
-
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
     steps:
       # Post a PR comment before deploying
       - name: Post a comment while building
